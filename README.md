@@ -15,7 +15,7 @@ classificação
 
  - SVM
  - Rede Neural Profunda
- - Classificador Estocástico
+ - [Classificador Estocástico (GMM)](https://github.com/epilefarias/classifica_ruido/blob/master/classificadores/classificador_estocastico.md)
  - Regressão Logística
  - KNN
  - C 4.5
