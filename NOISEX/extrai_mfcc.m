@@ -43,7 +43,7 @@ c5=melcepst(treino_destroyerops,fs);
 
 %------f16---------
 %load f16;
-f16 = wavread('f16.wav');
+f16  = wavread('f16.wav');
 treino_f16=f16(1:3524928);
 %sound(babble,19980,16);
 c6=melcepst(treino_f16,fs);
@@ -110,3 +110,25 @@ white = wavread('whitenoise.wav');
 treino_white=white(1:3524928);
 %sound(babble,19980,16);
 c15=melcepst(treino_white,fs);
+
+
+
+%write mel-cepstrals into .csv file
+
+csvwrite('babble.csv',c1);
+csvwrite('buccaneer1.csv',c2);
+csvwrite('buccaneer2.csv',c3);
+csvwrite('destroyerengine.csv',c4);
+csvwrite('destroyerops.csv',c5);
+csvwrite('f16.csv',c6);
+csvwrite('factory1.csv',c7);
+csvwrite('factory2.csv',c8);
+csvwrite('hfchannel.csv',c9);
+csvwrite('leopard.csv',c10);
+csvwrite('m109.csv',c11);
+csvwrite('machinegun.csv',c12);
+csvwrite('pink.csv',c13);
+csvwrite('volvo.csv',c14);
+csvwrite('white.csv',c15);
+
+cd ..
