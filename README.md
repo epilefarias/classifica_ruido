@@ -5,11 +5,11 @@ Programa pra classificar áudios segundo o tipo de ruído presente neles
 
 ## Base de dados
 
-Noisex **(vamo ter que falar com a tia rô né? não acho essa base completa na internet nem que a vaca tussa)**
+Noisex-92  **(na pasta)**
 
 ## Tarefa
 
-classificação
+Classificação
 
 ## Métodos utilizados
 
@@ -22,10 +22,21 @@ classificação
  
  - **Comitê de aprendizado**
  
+ ## Avaliação da Classificação
+ 
+ O que vamos utilizar para comparar e avaliar os classificadores?
+ 
  ## Todo List
  
- - [ ] Obter e extrair informações da base de dados
- - [ ] Descobrir atributos úteis para classificação
- - [ ] Obter implementações em Python dos classificadores
+ - [X] Obter e extrair informações da base de dados
+ - [X] Descobrir atributos úteis para classificação (coeficientes mel-cepstrais)
+ - [ ] Obter implementações em ~~Python~~ (agora usaremos Matlab) dos classificadores
+   - [ ] extrair Mel-Cepstrais
+   - [ ] GMM
+   - [ ] [SVM](https://github.com/epilefarias/classifica_ruido/blob/master/NOISEX/class_svm.m)
+   - [X] [KNN](https://github.com/epilefarias/classifica_ruido/blob/master/NOISEX/class_knn.m)
+   - [ ] Regress Log
+   - [ ] C 4.5
+   - [ ] Rede Neural
  - [ ] Adaptar implementações para o nosso problema
  - [ ] Compilar resultados e escrever artigo
