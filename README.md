@@ -36,7 +36,7 @@ Classificação
    - [ ] [SVM](https://github.com/epilefarias/classifica_ruido/blob/master/NOISEX/class_svm.m)
    - [X] [KNN](https://github.com/epilefarias/classifica_ruido/blob/master/NOISEX/class_knn.m)
    - [ ] Regress Log
-   - [ ] C 4.5
+   - [ ] C 4.5
    - [ ] Rede Neural
  - [ ] Adaptar implementações para o nosso problema
  - [ ] Compilar resultados e escrever artigo
