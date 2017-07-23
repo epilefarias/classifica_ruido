@@ -7,7 +7,7 @@
 % Limpa tela e memoria
 %clear all, close all, clc;
 
-% Frequencia de amostragem dos audios da base de dados
+% Frequência de amostragem dos áudios da base de dados
 fs=19980;
 
 % Carrega os coeficientes mel-cepstrais dos arquivos .csv para a memoria
@@ -20,7 +20,6 @@ end
 if ispc
     cd .\csvs
 end
-
 
 c01 = csvread('babble.csv');
 c02 = csvread('buccaneer1.csv');
@@ -37,8 +36,6 @@ c12 = csvread('machinegun.csv');
 c13 = csvread('pink.csv');
 c14 = csvread('volvo.csv');
 c15 = csvread('white.csv');
-
-
 
 %############################################################################
 

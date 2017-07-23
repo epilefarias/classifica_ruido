@@ -5,7 +5,7 @@
 %#######################%
 
 % Limpa tela e memoria
-clear all, close all, clc;
+%clear all, close all, clc;
 
 % Frequencia de amostragem dos audios da base de dados
 fs=19980;
