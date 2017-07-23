@@ -51,3 +51,11 @@ else
     cd ..
     passo02_create_dataset
 end
+
+
+% 3 - classficadores
+
+% aqui vão ser colocados os classificadores
+
+[acc_knn,tempo_knn] = class_knn;
+
