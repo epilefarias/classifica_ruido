@@ -1,12 +1,17 @@
+function [acc,tempo] = class_knn()
+
 %programa pra montar modelos de áudios usando knn 
 
 % limpando tela e variáveis anteriores
 
-clear all; clc;
+%clear all; clc;
 
 % lendo as entradas (arquivos .csv de cada classe)
 
-cd .\NOISEX
+t_knn = tic;
+
+%{
+cd .\csvs\
 
 babble = csvread('babble.csv');
 buccaneer1 = csvread('buccaneer1.csv');
@@ -69,6 +74,8 @@ treino(i+14*tam,:) = white(n*i,:);
 classes(i+14*tam) = 14;
 end
 
+%}
+
 % seleciona aleatoriamente partes de treino e teste dos dados
 [train, test] = crossvalind('holdOut',classes,0.25);
 
@@ -110,5 +117,8 @@ cp = classperf(dtest(:,3));
 classperf(cp,c);
 
 %imprime o resultado da classificação (acertos/total)
-cp.CorrectRate
+acc = cp.CorrectRate;
 
+tempo = toc(t_knn);
+
+end
