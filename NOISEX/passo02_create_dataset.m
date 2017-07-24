@@ -7,9 +7,6 @@
 % Limpa tela e memoria
 %clear all, close all, clc;
 
-% Frequencia de amostragem dos audios da base de dados
-fs=19980;
-
 % Carrega os coeficientes mel-cepstrais dos arquivos .csv para a memoria
 
 %para linux
@@ -46,7 +43,7 @@ c15 = csvread('white.csv');
 % A matriz 'dataset' possui 39 linhas por 275370 colunas.
 % Cada coluna é uma 'amostra' para a rede neural, cada linha é um atributo a ser usado pela rede 
 % para classificar os dados!
-dataset = horzcat(c01,c02,c03,c04,c05,c06,c07,c08,c09,c10,c11,c12,c13,c14,c15);
+dataset = vertcat(c01,c02,c03,c04,c05,c06,c07,c08,c09,c10,c11,c12,c13,c14,c15);
 
 %############################################################################
 
