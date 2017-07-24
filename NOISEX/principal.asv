@@ -49,13 +49,13 @@ if (exist('dataset.csv','file') == 2)&&(exist('target.csv','file') == 2)
 else
     fprintf('criando arquivos .csv com dataset e target \n');
     cd ..
-    passo02_create_dataset
+    [dataset, target] = passo02_create_dataset;
 end
 
 
 % 3 - classficadores
-
+pause
 % aqui vão ser colocados os classificadores
 
-class_knn
+[acc_knn,tempo_knn] = class_knn(dataset,target);
 
