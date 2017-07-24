@@ -1,4 +1,4 @@
-function [acc,tempo] = class_knn()
+function [acc,tempo] = class_knn
 
 %programa pra montar modelos de áudios usando knn 
 
@@ -10,7 +10,15 @@ function [acc,tempo] = class_knn()
 
 t_knn = tic;
 
+%
 cd .\csvs\
+
+dataset = csvread('dataset.csv');
+target = csvread('target.csv');
+
+cd ..
+
+%{
 
 babble = csvread('babble.csv');
 buccaneer1 = csvread('buccaneer1.csv');
@@ -73,13 +81,24 @@ treino(i+14*tam,:) = white(n*i,:);
 classes(i+14*tam) = 14;
 end
 
+%}
+
+%cria vetor de classes de cada frame usando a matriz 'target'
+classes = zeros(length(dataset),1);
+
+
+for i = 1:length(target)
+    classes(i) = floor(i/(length(dataset)/15));
+end
+    
+
 % seleciona aleatoriamente partes de treino e teste dos dados
 [train, test] = crossvalind('holdOut',classes,0.25);
 
 
 
 % cria matriz 'dados' com os coeficientes usados como entrada do classificador
-dados = [ treino(:,1), treino(:,2)];
+dados = [ dataset(:,1), treino(:,2)];
 
 
 % incorpora as classes ao vetor de dados
@@ -119,5 +138,3 @@ acc = cp.CorrectRate;
 tempo = toc(t_knn);
 
 end
-
-
