@@ -8,7 +8,7 @@
 clear all; close all; clc
 
 
-% 1 - criar arquivos .mat com os audios
+% 1 - criar arquivos .csv com os audios
 
 %para linux
 if isunix
@@ -20,11 +20,11 @@ if ispc
 end
 
 %verifica se existe. se nao, cria
-if (exist('babble.mat','file') == 2)&&(exist('buccaneer1.mat','file') == 2)&&(exist('buccaneer2.mat','file') == 2)&&(exist('destroyerengine.mat','file') == 2)&&(exist('destroyerops.mat','file') == 2)&&(exist('f16.mat','file') == 2)&&(exist('factory1.mat','file') == 2)&&(exist('factory2.mat','file') == 2)&&(exist('hfchannel.mat','file') == 2)&&(exist('leopard.mat','file') == 2)&&(exist('m109.mat','file') == 2)&&(exist('machinegun.mat','file') == 2)&&(exist('pink.mat','file') == 2)&&(exist('volvo.mat','file') == 2)&&(exist('white.mat','file') == 2)
-    fprintf('já há arquivos .mat com os coeficientes mel-cepstrais \n');
+if (exist('babble.csv','file') == 2)&&(exist('buccaneer1.csv','file') == 2)&&(exist('buccaneer2.csv','file') == 2)&&(exist('destroyerengine.csv','file') == 2)&&(exist('destroyerops.csv','file') == 2)&&(exist('f16.csv','file') == 2)&&(exist('factory1.csv','file') == 2)&&(exist('factory2.csv','file') == 2)&&(exist('hfchannel.csv','file') == 2)&&(exist('leopard.csv','file') == 2)&&(exist('m109.csv','file') == 2)&&(exist('machinegun.csv','file') == 2)&&(exist('pink.csv','file') == 2)&&(exist('volvo.csv','file') == 2)&&(exist('white.csv','file') == 2)
+    fprintf('já há arquivos .csv com os coeficientes mel-cepstrais \n');
     cd ..
 else
-    fprintf('criando arquivos .mat com os coeficientes mel-cepstrais \n');
+    fprintf('criando arquivos .csv com os coeficientes mel-cepstrais \n');
     cd ..
     passo01_extract_mfcc
 end
@@ -43,11 +43,11 @@ if ispc
 end
 
 %verifica se existe. se nao, cria
-if (exist('dataset.mat','file') == 2)&&(exist('target.mat','file') == 2)
-    fprintf('já há arquivos .mat com o dataset e target \n');
+if (exist('dataset.csv','file') == 2)&&(exist('target.csv','file') == 2)
+    fprintf('já há arquivos .csv com o dataset e target \n');
     cd ..
 else
-    fprintf('criando arquivos .mat com dataset e target \n');
+    fprintf('criando arquivos .csv com dataset e target \n');
     cd ..
     passo02_create_dataset
 end

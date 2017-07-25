@@ -7,7 +7,7 @@
 % Limpa tela e memoria
 %clear all, close all, clc;
 
-% Carrega os coeficientes mel-cepstrais dos arquivos .mat para a memoria
+% Carrega os coeficientes mel-cepstrais dos arquivos .csv para a memoria
 
 %para linux
 if isunix
@@ -19,21 +19,21 @@ if ispc
 end
 
 
-c01 = load('babble.mat');
-c02 = load('buccaneer1.mat');
-c03 = load('buccaneer2.mat');
-c04 = load('destroyerengine.mat');
-c05 = load('destroyerops.mat');
-c06 = load('f16.mat');
-c07 = load('factory1.mat');
-c08 = load('factory2.mat');
-c09 = load('hfchannel.mat');
-c10 = load('leopard.mat');
-c11 = load('m109.mat');
-c12 = load('machinegun.mat');
-c13 = load('pink.mat');
-c14 = load('volvo.mat');
-c15 = load('white.mat');
+c01 = csvread('babble.csv');
+c02 = csvread('buccaneer1.csv');
+c03 = csvread('buccaneer2.csv');
+c04 = csvread('destroyerengine.csv');
+c05 = csvread('destroyerops.csv');
+c06 = csvread('f16.csv');
+c07 = csvread('factory1.csv');
+c08 = csvread('factory2.csv');
+c09 = csvread('hfchannel.csv');
+c10 = csvread('leopard.csv');
+c11 = csvread('m109.csv');
+c12 = csvread('machinegun.csv');
+c13 = csvread('pink.csv');
+c14 = csvread('volvo.csv');
+c15 = csvread('white.csv');
 
 
 
@@ -112,9 +112,9 @@ for i=(14*18358+1):(15*18358)
 	target(15,i) = 1;
 end
 
-% SALVA AS MATRIZES DATASET E TARGET EM ARQUIVOS .mat
-save('dataset.mat','dataset');
-save('target.mat','target');
+% SALVA AS MATRIZES DATASET E TARGET EM ARQUIVOS .CSV
+csvwrite('dataset.csv',dataset);
+csvwrite('target.csv',target);
 
 %############################################################################
 

@@ -56,7 +56,7 @@ c13=melcepst(pink,fs,'dD',13);
 c14=melcepst(volvo,fs,'dD',13); 
 c15=melcepst(white,fs,'dD',13); 
 
-% Salva os coeficientes mel-cepstrais em arquivos .mat
+% Salva os coeficientes mel-cepstrais em arquivos .csv
 
 %para linux
 if isunix
@@ -67,21 +67,21 @@ if ispc
     cd .\csvs
 end
 
-save('babble.mat','c01');
-save('buccaneer1.mat','c02');
-save('buccaneer2.mat','c03');
-save('destroyerengine.mat','c04');
-save('destroyerops.mat','c05');
-save('f16.mat','c06');
-save('factory1.mat','c07');
-save('factory2.mat','c08');
-save('hfchannel.mat','c09');
-save('leopard.mat','c10');
-save('m109.mat','c11');
-save('machinegun.mat','c12');
-save('pink.mat','c13');
-save('volvo.mat','c14');
-save('white.mat','c15');
+csvwrite('babble.csv',c01);
+csvwrite('buccaneer1.csv',c02);
+csvwrite('buccaneer2.csv',c03);
+csvwrite('destroyerengine.csv',c04);
+csvwrite('destroyerops.csv',c05);
+csvwrite('f16.csv',c06);
+csvwrite('factory1.csv',c07);
+csvwrite('factory2.csv',c08);
+csvwrite('hfchannel.csv',c09);
+csvwrite('leopard.csv',c10);
+csvwrite('m109.csv',c11);
+csvwrite('machinegun.csv',c12);
+csvwrite('pink.csv',c13);
+csvwrite('volvo.csv',c14);
+csvwrite('white.csv',c15);
 
 cd ..
 

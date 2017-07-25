@@ -9,7 +9,6 @@ t_knn = tic;
 cd .\csvs\
 
 dataset = csvread('dataset.csv');
-%target = csvread('target.csv');
 
 cd ..
 
