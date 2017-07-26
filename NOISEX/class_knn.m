@@ -1,4 +1,4 @@
-function [acc,tempo] = class_knn
+function [acc,tempo,c] = class_knn
 
 %programa pra montar modelos de áudios usando knn 
 
