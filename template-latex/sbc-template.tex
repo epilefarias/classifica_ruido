@@ -10,23 +10,16 @@
      
 \sloppy
 
-\title{Instructions for Authors of SBC Conferences\\ Papers and Abstracts}
+\title{Noise Classification Using Decision Comitee}
 
-\author{Luciana P. Nedel\inst{1}, Rafael H. Bordini\inst{2}, Flávio Rech
-  Wagner\inst{1}, Jomi F. Hübner\inst{3} }
+\author{Antônio Nascimento\inst{1}, Felipe de S. Farias\inst{1}, Marília Alves \inst{2}}
 
 
-\address{Instituto de Informática -- Universidade Federal do Rio Grande do Sul
-  (UFRGS)\\
-  Caixa Postal 15.064 -- 91.501-970 -- Porto Alegre -- RS -- Brazil
+\address{Programa de Pós-Graduação em Engenharia de Defesa \\ Instituto Militar de Engenharia (IME)\\
 \nextinstitute
-  Department of Computer Science -- University of Durham\\
-  Durham, U.K.
+  Programa de Pós-Graduação em Engenharia Elétrica \\ Instituto Militar de Engenharia (IME)
 \nextinstitute
-  Departamento de Sistemas e Computação\\
-  Universidade Regional de Blumenal (FURB) -- Blumenau, SC -- Brazil
-  \email{\{nedel,flavio\}@inf.ufrgs.br, R.Bordini@durham.ac.uk,
-  jomi@inf.furb.br}
+  \email{\{nascimento,felipe.farias,marilia.alves\}@ime.eb.br}
 }
 
 \begin{document} 
@@ -34,119 +27,113 @@
 \maketitle
 
 \begin{abstract}
-  This meta-paper describes the style to be used in articles and short papers
-  for SBC conferences. For papers in English, you should add just an abstract
-  while for the papers in Portuguese, we also ask for an abstract in
-  Portuguese (``resumo''). In both cases, abstracts should not have more than
-  10 lines and must be in the first page of the paper.
+
+This is the paper model for SBC conferences. I made some instructions so we can use it to write our own paper. It contains a suggestion of placement of the sections. 
+
+Ok here we make the abstract. Needless to say it comes last. Should have max 10 lines.
+
 \end{abstract}
      
-\begin{resumo} 
-  Este meta-artigo descreve o estilo a ser usado na confecção de artigos e
-  resumos de artigos para publicação nos anais das conferências organizadas
-  pela SBC. É solicitada a escrita de resumo e abstract apenas para os artigos
-  escritos em português. Artigos em inglês deverão apresentar apenas abstract.
-  Nos dois casos, o autor deve tomar cuidado para que o resumo (e o abstract)
-  não ultrapassem 10 linhas cada, sendo que ambos devem estar na primeira
-  página do artigo.
-\end{resumo}
+%\begin{resumo} 
+%  Este meta-artigo descreve o estilo a ser usado na confecção de artigos e
+%  resumos de artigos para publicação nos anais das conferências organizadas
+%  pela SBC. É solicitada a escrita de resumo e abstract apenas para os artigos
+%  escritos em português. Artigos em inglês deverão apresentar apenas abstract.
+%  Nos dois casos, o autor deve tomar cuidado para que o resumo (e o abstract)
+%  não ultrapassem 10 linhas cada, sendo que ambos devem estar na primeira
+%  página do artigo.
+%\end{resumo}
 
 
-\section{General Information}
+\section{Introduction} \label{sec:intro}
 
-All full papers and posters (short papers) submitted to some SBC conference,
-including any supporting documents, should be written in English or in
-Portuguese. The format paper should be A4 with single column, 3.5 cm for upper
-margin, 2.5 cm for bottom margin and 3.0 cm for lateral margins, without
-headers or footers. The main font must be Times, 12 point nominal size, with 6
-points of space before each paragraph. Page numbers must be suppressed.
+I took some liberties in the sketch Nascimento gave us in the Telegram group, combining with this paper \cite{nakagawa2012speaker} to come up with this model you're seeing. Initially, this Section describes the problem we are attempting to solve. We have to describe the problem many audio signal processing tasks face when performed in noisy conditions. References are much appreciated.
 
-Full papers must respect the page limits defined by the conference.
-Conferences that publish just abstracts ask for \textbf{one}-page texts.
+After that, we should write some kind of small version of the next sections. Do it ONLY after writing all the other parts. Each paragraph in the other sections become some lines here.
 
-\section{First Page} \label{sec:firstpage}
+\section{Audio Classification} \label{class}
 
-The first page must display the paper title, the name and address of the
-authors, the abstract in English and ``resumo'' in Portuguese (``resumos'' are
-required only for papers written in Portuguese). The title must be centered
-over the whole page, in 16 point boldface font and with 12 points of space
-before itself. Author names must be centered in 12 point font, bold, all of
-them disposed in the same line, separated by commas and with 12 points of
-space after the title. Addresses must be centered in 12 point font, also with
-12 points of space after the authors' names. E-mail addresses should be
-written using font Courier New, 10 point nominal size, with 6 points of space
-before and 6 points of space after.
+In this section we should describe the audio classification task and how it applies to our specific problem, the noise classification.
 
-The abstract and ``resumo'' (if is the case) must be in 12 point Times font,
-indented 0.8cm on both sides. The word \textbf{Abstract} and \textbf{Resumo},
-should be written in boldface and must precede the text.
+Additionally, we have to describe each technique we use, in subsections.
 
-\section{CD-ROMs and Printed Proceedings}
+\subsection{Neural Network} \label{class:nn}
 
-In some conferences, the papers are published on CD-ROM while only the
-abstract is published in the printed Proceedings. In this case, authors are
-invited to prepare two final versions of the paper. One, complete, to be
-published on the CD and the other, containing only the first page, with
-abstract and ``resumo'' (for papers in Portuguese).
+One or two paragraphs should do. Don't forget the proper references (like this one \cite{lei2014novel}).
 
-\section{Sections and Paragraphs}
+\subsection{K-means} \label{class:kmeans}
 
-Section titles must be in boldface, 13pt, flush left. There should be an extra
-12 pt of space before each title. Section numbering is optional. The first
-paragraph of each section should not be indented, while the first lines of
-subsequent paragraphs should be indented by 1.27 cm.
+This is a method used in summarization. Didn't find references.
 
-\subsection{Subsections}
-
-The subsection titles must be in boldface, 12pt, flush left.
-
-\section{Figures and Captions}\label{sec:figs}
+\subsection{Gaussian Mixture Models} \label{class:gmm}
 
 
-Figure and table captions should be centered if less than one line
-(Figure~\ref{fig:exampleFig1}), otherwise justified and indented by 0.8cm on
-both margins, as shown in Figure~\ref{fig:exampleFig2}. The caption font must
-be Helvetica, 10 point, boldface, with 6 points of space before and after each
-caption.
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=.5\textwidth]{fig1.jpg}
-\caption{A typical figure}
-\label{fig:exampleFig1}
-\end{figure}
+\subsection{Logistic Regression} \label{class:log}
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=.3\textwidth]{fig2.jpg}
-\caption{This figure is an example of a figure caption taking more than one
-  line and justified considering margins mentioned in Section~\ref{sec:figs}.}
-\label{fig:exampleFig2}
-\end{figure}
+\subsection{K-Nearest Neighbors} \label{class:knn}
 
-In tables, try to avoid the use of colored or shaded backgrounds, and avoid
-thick, doubled, or unnecessary framing lines. When reporting empirical data,
-do not use more decimal digits than warranted by their precision and
-reproducibility. Table caption must be placed before the table (see Table 1)
-and the font used must also be Helvetica, 10 point, boldface, with 6 points of
-space before and after each caption.
+This paper should give me a start \cite{karam2013graph}. Hope i'm not wrong.
 
-\begin{table}[ht]
-\centering
-\caption{Variables to be considered on the evaluation of interaction
-  techniques}
-\label{tab:exTable1}
-\includegraphics[width=.7\textwidth]{table.jpg}
-\end{table}
+\subsection{Support Vector Machines} \label{class:svm}
 
-\section{Images}
+Here we have a paper in audio classification using SVM \cite{cumani2012analysis}.
 
-All images and illustrations should be in black-and-white, or gray tones,
-excepting for the papers that will be electronically available (on CD-ROMs,
-internet, etc.). The image resolution on paper should be about 600 dpi for
-black-and-white images, and 150-300 dpi for grayscale images.  Do not include
-images with excessive resolution, as they may take hours to print, without any
-visible difference in the result. 
+
+
+\section{Experiments} \label{exp}
+
+Here we will describe the experiments. It should contain an introductory paragraph containing the purpose of the experiments.
+
+\subsection{Experimental Setup} \label{exp:setup}
+
+This paragraph should have all the requirements to perform the experiment, including hardware, software and general conditions. Sometimes people put the database here, but i think it will provide greater value if we put it in it's own subsection.
+
+\subsection{Database Description} \label{exp:data}
+
+Here we describe the NOISEX database. Since it's an important part of this work, we should take our time to properly describe it.
+
+\subsection{Evaluation Metrics} \label{exp:metric}
+
+ISSO É UMA SUGESTÃO
+
+Here we can describe how we evaluate the performance of each experiment.
+
+\subsection{Results} \label{exp:res}
+
+You may be wondering why have only the 'results' and not the 'experiments' subsection. This is because we already told the reader everything he has to know in the previous sections. Section \ref{class} describes the different methods and Sections \ref{exp:setup} and \ref{exp:data} describe the details of the experiments.
+
+\section{Conclusions} \label{conc}
+
+Here we conclude the paper. I suck at this, so pls someone do it for me. The one thing I know is that we have to summarize our findings and link it to our problem stated in the introduction, telling the reader whether we were successful or not in the task we proposed in the beginning.
+
+%exemplo de figura
+
+%\begin{figure}[ht]
+%\centering
+%\includegraphics[width=.5\textwidth]{fig1.jpg}
+%\caption{A typical figure}
+%\label{fig:exampleFig1}
+%\end{figure}
+
+%\begin{figure}[ht]
+%\centering
+%\includegraphics[width=.3\textwidth]{fig2.jpg}
+%\caption{This figure is an example of a figure caption taking more than one
+%  line and justified considering margins mentioned in %Section~\ref{sec:figs}.}
+%\label{fig:exampleFig2}
+%\end{figure}
+
+
+% EXEMPLO DE TABELA
+
+%\begin{table}[ht]
+%\centering
+%\caption{Variables to be considered on the evaluation of interaction  techniques}
+%\label{tab:exTable1}
+%\includegraphics[width=.7\textwidth]{table.jpg}
+%\end{table}
+
 
 \section{References}
 

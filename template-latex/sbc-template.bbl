@@ -1,20 +1,30 @@
 \begin{thebibliography}{}
 
-\bibitem[Boulic and Renault 1991]{boulic:91}
-Boulic, R. and Renault, O. (1991).
-\newblock 3d hierarchies for animation.
-\newblock In Magnenat-Thalmann, N. and Thalmann, D., editors, {\em New Trends
-  in Animation and Visualization}. John Wiley {\&} Sons ltd.
+\bibitem[Cumani and Laface 2012]{cumani2012analysis}
+Cumani, S. and Laface, P. (2012).
+\newblock Analysis of large-scale svm training algorithms for language and
+  speaker recognition.
+\newblock {\em IEEE Transactions on Audio, Speech, and Language Processing},
+  20(5):1585--1596.
 
-\bibitem[Knuth 1984]{knuth:84}
-Knuth, D.~E. (1984).
-\newblock {\em The {\TeX} Book}.
-\newblock Addison-Wesley, 15th edition.
+\bibitem[Karam and Campbell 2013]{karam2013graph}
+Karam, Z.~N. and Campbell, W.~M. (2013).
+\newblock Graph embedding for speaker recognition.
+\newblock In {\em Graph Embedding for Pattern Analysis}, pages 229--260.
+  Springer.
 
-\bibitem[Smith and Jones 1999]{smith:99}
-Smith, A. and Jones, B. (1999).
-\newblock On the complexity of computing.
-\newblock In Smith-Jones, A.~B., editor, {\em Advances in Computer Science},
-  pages 555--566. Publishing Press.
+\bibitem[Lei et~al. 2014]{lei2014novel}
+Lei, Y., Scheffer, N., Ferrer, L., and McLaren, M. (2014).
+\newblock A novel scheme for speaker recognition using a phonetically-aware
+  deep neural network.
+\newblock In {\em Acoustics, Speech and Signal Processing (ICASSP), 2014 IEEE
+  International Conference on}, pages 1695--1699. IEEE.
+
+\bibitem[Nakagawa et~al. 2012]{nakagawa2012speaker}
+Nakagawa, S., Wang, L., and Ohtsuka, S. (2012).
+\newblock Speaker identification and verification by combining mfcc and phase
+  information.
+\newblock {\em IEEE transactions on audio, speech, and language processing},
+  20(4):1085--1095.
 
 \end{thebibliography}
