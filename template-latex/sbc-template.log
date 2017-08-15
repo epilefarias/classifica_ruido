@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.11.4)  14 AUG 2017 22:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.11.4)  14 AUG 2017 22:43
 entering extended mode
 **./sbc-template.tex
 (sbc-template.tex
@@ -269,10 +269,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 (sbc-template.bbl [2]) [3] (sbc-template.aux) ) 
 Here is how much of TeX's memory you used:
- 2718 strings out of 493334
- 38262 string characters out of 3139234
+ 2717 strings out of 493334
+ 38254 string characters out of 3139234
  120932 words of memory out of 3000000
- 6199 multiletter control sequences out of 15000+200000
+ 6198 multiletter control sequences out of 15000+200000
  21033 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,10n,28p,430b,319s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -284,7 +284,7 @@ ram Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><D:/Program Files/MiKT
 eX 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type
 1/urw/times/utmbi8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr
 8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on sbc-template.pdf (3 pages, 98527 bytes).
+Output written on sbc-template.pdf (3 pages, 98477 bytes).
 PDF statistics:
  45 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
