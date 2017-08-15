@@ -1,4 +1,4 @@
-function [acc,tempo,c] = class_knn
+function [acc,tempo,sens,spec,tb] = class_knn
 
 %programa pra montar modelos de áudios usando knn 
 
@@ -54,6 +54,11 @@ classperf(cp,c);
 
 %imprime o resultado da classificação (acertos/total)
 acc = cp.CorrectRate;
+sens = cp.Sensitivity;
+spec = cp.Specificity;
+tb = cp.DiagnosticTable;
+
+%conf = confusionmant(cp,c);
 
 tempo = toc(t_knn);
 

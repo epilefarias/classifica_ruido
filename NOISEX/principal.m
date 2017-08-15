@@ -58,6 +58,6 @@ end
 % aqui vão ser colocados os classificadores
 
 fprintf('classificando os áudios segundo o knn \n');
-[acc_knn,tempo_knn] = class_knn;
+[acc,tempo,sens,spec,tb] = class_knn;
 
 fprintf('acurácia é %2.2f e levou %2.2f segundos \n',acc_knn,tempo_knn);
