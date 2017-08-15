@@ -57,6 +57,10 @@ In this section we should describe the audio classification task and how it appl
 
 Additionally, we have to describe each technique we use, in subsections.
 
+\subsection{Mel-Cepstral Coefficient Extraction} \label{class:melcepst}
+
+Here we talk about mel-cepstral coefficients and how to use them to identify each class of noise.
+
 \subsection{Neural Network} \label{class:nn}
 
 One or two paragraphs should do. Don't forget the proper references (like this one \cite{lei2014novel}).
@@ -67,13 +71,8 @@ This is a method used in summarization. Didn't find references.
 
 \subsection{Gaussian Mixture Models} \label{class:gmm}
 
+This section describes the use of Gaussian mixture models (GMM) in the task of noise representation and classification. Here is a good journal article for further reference \cite{reynolds1995robust}.
 
-
-\subsection{Logistic Regression} \label{class:log}
-
-\subsection{K-Nearest Neighbors} \label{class:knn}
-
-This paper should give me a start \cite{karam2013graph}. Hope i'm not wrong.
 
 \subsection{Support Vector Machines} \label{class:svm}
 
@@ -102,6 +101,64 @@ Here we can describe how we evaluate the performance of each experiment.
 \subsection{Results} \label{exp:res}
 
 You may be wondering why have only the 'results' and not the 'experiments' subsection. This is because we already told the reader everything he has to know in the previous sections. Section \ref{class} describes the different methods and Sections \ref{exp:setup} and \ref{exp:data} describe the details of the experiments.
+
+
+\begin{table}[h]
+\centering
+\caption{Model of confusion table PRA EU N TER Q FAZER ISSO DE NOVO}
+\label{tab:confusion}
+\resizebox{\textwidth}{!}{\begin{tabular}{l|lllllllllllllll}
+\hline
+& Babble & Buccaneer 1 & Buccaneer 2 & Destroyer Engine & Destroyer Ops & F16 & Factory 1 & Factory 2 & HF Channel & Leopard & M109 & Machine Gun & Pink & Volvo & White \\
+\hline
+Babble & & & & & & & & & & & & & & & \\
+Buccaneer 1 & & & & & & & & & & & & & & & \\
+Buccaneer 2  & & & & & & & & & & & & & & & \\
+Destroyer Engine  & & & & & & & & & & & & & & & \\
+Destroyer Ops & & & & & & & & & & & & & & & \\
+F16 & & & & & & & & & & & & & & & \\
+Factory 1 & & & & & & & & & & & & & & & \\
+Factory 2 & & & & & & & & & & & & & & & \\
+HF Channel & & & & & & & & & & & & & & & \\
+Leopard & & & & & & & & & & & & & & & \\
+M109 & & & & & & & & & & & & & & & \\
+Machine Gun & & & & & & & & & & & & & & & \\
+Pink & & & & & & & & & & & & & & & \\
+Volvo & & & & & & & & & & & & & & & \\
+White & & & & & & & & & & & & & & & \\
+\hline
+\end{tabular}}
+\end{table}
+
+
+
+
+\begin{table}[h]
+\centering
+\caption{Accuracy per class for the K-means classification}
+\label{tab:acckmeans}
+\begin{tabular}{ll}
+\hline
+Class & Accuracy \\
+\hline
+Babble & 99,64\% \\
+Bucanneer 1 & 91,79\%\\
+Bucanneer 2 & 91,79\%\\
+Destroyer Engine & 96,67\%\\
+Destroyer Ops & 59,06\%\\
+F16 & 94,10\%\\
+Factory 1 & 100,00\%\\
+Factory 2 & 98,69\%\\
+HF Channel & 93,89\%\\
+Leopard & RAPAZ TEM ALGO ERRADO AÍ \\
+M109 & 93,89\%\\
+Machine Gun & 7,45\%\\
+Pink & 99,76\%\\
+Volvo & 90,78\%\\
+White & 99,95\%\\
+\hline
+\end{tabular}
+\end{table}
 
 \section{Conclusions} \label{conc}
 
@@ -135,15 +192,6 @@ Here we conclude the paper. I suck at this, so pls someone do it for me. The one
 %\end{table}
 
 
-\section{References}
-
-Bibliographic references must be unambiguous and uniform.  We recommend giving
-the author names references in brackets, e.g. \cite{knuth:84},
-\cite{boulic:91}, and \cite{smith:99}.
-
-The references must be listed using 12 point font size, with 6 points of space
-before each reference. The first line of each reference should not be
-indented, while the subsequent should be indented by 0.5 cm.
 
 \bibliographystyle{sbc}
 \bibliography{sbc-template}

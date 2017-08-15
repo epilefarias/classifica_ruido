@@ -7,12 +7,6 @@ Cumani, S. and Laface, P. (2012).
 \newblock {\em IEEE Transactions on Audio, Speech, and Language Processing},
   20(5):1585--1596.
 
-\bibitem[Karam and Campbell 2013]{karam2013graph}
-Karam, Z.~N. and Campbell, W.~M. (2013).
-\newblock Graph embedding for speaker recognition.
-\newblock In {\em Graph Embedding for Pattern Analysis}, pages 229--260.
-  Springer.
-
 \bibitem[Lei et~al. 2014]{lei2014novel}
 Lei, Y., Scheffer, N., Ferrer, L., and McLaren, M. (2014).
 \newblock A novel scheme for speaker recognition using a phonetically-aware
@@ -26,5 +20,11 @@ Nakagawa, S., Wang, L., and Ohtsuka, S. (2012).
   information.
 \newblock {\em IEEE transactions on audio, speech, and language processing},
   20(4):1085--1095.
+
+\bibitem[Reynolds and Rose 1995]{reynolds1995robust}
+Reynolds, D.~A. and Rose, R.~C. (1995).
+\newblock Robust text-independent speaker identification using gaussian mixture
+  speaker models.
+\newblock {\em IEEE transactions on Speech and Audio Processing}, 3(1):72--83.
 
 \end{thebibliography}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.11.4)  3 AUG 2017 00:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.11.4)  14 AUG 2017 22:37
 entering extended mode
 **./sbc-template.tex
 (sbc-template.tex
@@ -255,38 +255,38 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <13> not available
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-
-LaTeX Warning: Citation `knuth:84' on page 2 undefined on input line 141.
-
-
-LaTeX Warning: Citation `boulic:91' on page 2 undefined on input line 142.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 108.
 
 
-LaTeX Warning: Citation `smith:99' on page 2 undefined on input line 142.
+("D:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd"
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 108.
 
-(sbc-template.bbl [2]) [3] (sbc-template.aux)
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
- ) 
+(sbc-template.bbl [2]) [3] (sbc-template.aux) ) 
 Here is how much of TeX's memory you used:
- 2661 strings out of 493334
- 37490 string characters out of 3139234
- 105927 words of memory out of 3000000
- 6148 multiletter control sequences out of 15000+200000
- 18188 words of font info for 40 fonts, out of 3000000 for 9000
+ 2718 strings out of 493334
+ 38262 string characters out of 3139234
+ 120932 words of memory out of 3000000
+ 6199 multiletter control sequences out of 15000+200000
+ 21033 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,10n,28p,430b,319s stack positions out of 5000i,500n,10000p,200000b,50000s
-{D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<D:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts/typ
-e1/urw/courier/ucrr8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
-mb8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><D:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/Program Files/MiKTeX
- 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on sbc-template.pdf (3 pages, 87121 bytes).
+{D:/Program Files/MiKTeX 2.9/fon
+ts/enc/dvips/base/8r.enc}<D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><D:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><D:/Program Files/MiKT
+eX 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type
+1/urw/times/utmbi8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr
+8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on sbc-template.pdf (3 pages, 98527 bytes).
 PDF statistics:
- 41 PDF objects out of 1000 (max. 8388607)
+ 45 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
