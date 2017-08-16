@@ -1,11 +1,71 @@
 \begin{thebibliography}{}
 
+\bibitem[Barchiesi et~al. 2015]{barchiesi2015acoustic}
+Barchiesi, D., Giannoulis, D., Stowell, D., and Plumbley, M.~D. (2015).
+\newblock Acoustic scene classification: Classifying environments from the
+  sounds they produce.
+\newblock {\em IEEE Signal Processing Magazine}, 32(3):16--34.
+
+\bibitem[Benesty 2000]{benesty2000adaptive}
+Benesty, J. (2000).
+\newblock Adaptive eigenvalue decomposition algorithm for passive acoustic
+  source localization.
+\newblock {\em The Journal of the Acoustical Society of America},
+  107(1):384--391.
+
+\bibitem[Beritelli et~al. 2005]{beritelli2005adaptive}
+Beritelli, F., Casale, S., and Serrano, S. (2005).
+\newblock Adaptive robust speech processing based on acoustic noise estimation
+  and classification.
+\newblock In {\em Signal Processing and Information Technology, 2005.
+  Proceedings of the Fifth IEEE International Symposium on}, pages 773--777.
+  IEEE.
+
+\bibitem[Beritelli et~al. 2007]{beritelli2007adaptive}
+Beritelli, F., Casale, S., and Serrano, S. (2007).
+\newblock Adaptive v/uv speech detection based on acoustic noise estimation and
+  classification.
+\newblock {\em Electronics Letters}, 43(4):249--251.
+
 \bibitem[Cumani and Laface 2012]{cumani2012analysis}
 Cumani, S. and Laface, P. (2012).
 \newblock Analysis of large-scale svm training algorithms for language and
   speaker recognition.
 \newblock {\em IEEE Transactions on Audio, Speech, and Language Processing},
   20(5):1585--1596.
+
+\bibitem[Dal~Degan and Prati 1988]{dal1988acoustic}
+Dal~Degan, N. and Prati, C. (1988).
+\newblock Acoustic noise analysis and speech enhancement techniques for mobile
+  radio applications.
+\newblock {\em Signal Processing}, 15(1):43--56.
+
+\bibitem[Farrell et~al. 1994]{farrell1994speaker}
+Farrell, K.~R., Mammone, R.~J., and Assaleh, K.~T. (1994).
+\newblock Speaker recognition using neural networks and conventional
+  classifiers.
+\newblock {\em IEEE Transactions on speech and audio processing},
+  2(1):194--205.
+
+\bibitem[Friesen et~al. 2001]{friesen2001speech}
+Friesen, L.~M., Shannon, R.~V., Baskent, D., and Wang, X. (2001).
+\newblock Speech recognition in noise as a function of the number of spectral
+  channels: comparison of acoustic hearing and cochlear implants.
+\newblock {\em The Journal of the Acoustical Society of America},
+  110(2):1150--1163.
+
+\bibitem[Kinnunen and Li 2010]{kinnunen2010overview}
+Kinnunen, T. and Li, H. (2010).
+\newblock An overview of text-independent speaker recognition: From features to
+  supervectors.
+\newblock {\em Speech communication}, 52(1):12--40.
+
+\bibitem[Lee et~al. 2008]{lee2008automatic}
+Lee, C.-H., Han, C.-C., and Chuang, C.-C. (2008).
+\newblock Automatic classification of bird species from their sounds using
+  two-dimensional cepstral coefficients.
+\newblock {\em IEEE Transactions on Audio, Speech, and Language Processing},
+  16(8):1541--1550.
 
 \bibitem[Lei et~al. 2014]{lei2014novel}
 Lei, Y., Scheffer, N., Ferrer, L., and McLaren, M. (2014).
@@ -14,17 +74,73 @@ Lei, Y., Scheffer, N., Ferrer, L., and McLaren, M. (2014).
 \newblock In {\em Acoustics, Speech and Signal Processing (ICASSP), 2014 IEEE
   International Conference on}, pages 1695--1699. IEEE.
 
-\bibitem[Nakagawa et~al. 2012]{nakagawa2012speaker}
-Nakagawa, S., Wang, L., and Ohtsuka, S. (2012).
-\newblock Speaker identification and verification by combining mfcc and phase
-  information.
-\newblock {\em IEEE transactions on audio, speech, and language processing},
-  20(4):1085--1095.
+\bibitem[Ma et~al. 2006]{ma2006acoustic}
+Ma, L., Milner, B., and Smith, D. (2006).
+\newblock Acoustic environment classification.
+\newblock {\em ACM Transactions on Speech and Language Processing (TSLP)},
+  3(2):1--22.
+
+\bibitem[Ma et~al. 2003]{ma2003context}
+Ma, L., Smith, D., and Milner, B.~P. (2003).
+\newblock Context awareness using environmental noise classification.
+\newblock In {\em Interspeech}.
+
+\bibitem[May et~al. 2012]{may2012noise}
+May, T., Van De~Par, S., and Kohlrausch, A. (2012).
+\newblock Noise-robust speaker recognition combining missing data techniques
+  and universal background modeling.
+\newblock {\em IEEE Transactions on Audio, Speech, and Language Processing},
+  20(1):108--121.
+
+\bibitem[Ming et~al. 2007]{ming2007robust}
+Ming, J., Hazen, T.~J., Glass, J.~R., and Reynolds, D.~A. (2007).
+\newblock Robust speaker recognition in noisy conditions.
+\newblock {\em IEEE Transactions on Audio, Speech, and Language Processing},
+  15(5):1711--1723.
+
+\bibitem[Murty and Yegnanarayana 2006]{murty2006combining}
+Murty, K. S.~R. and Yegnanarayana, B. (2006).
+\newblock Combining evidence from residual phase and mfcc features for speaker
+  recognition.
+\newblock {\em IEEE signal processing letters}, 13(1):52--55.
+
+\bibitem[Peltonen et~al. 2002]{peltonen2002computational}
+Peltonen, V., Tuomi, J., Klapuri, A., Huopaniemi, J., and Sorsa, T. (2002).
+\newblock Computational auditory scene recognition.
+\newblock In {\em Acoustics, Speech, and Signal Processing (ICASSP), 2002 IEEE
+  International Conference on}, volume~2, pages II--1941. IEEE.
+
+\bibitem[Piczak 2015]{piczak2015environmental}
+Piczak, K.~J. (2015).
+\newblock Environmental sound classification with convolutional neural
+  networks.
+\newblock In {\em Machine Learning for Signal Processing (MLSP), 2015 IEEE 25th
+  International Workshop on}, pages 1--6. IEEE.
 
 \bibitem[Reynolds and Rose 1995]{reynolds1995robust}
 Reynolds, D.~A. and Rose, R.~C. (1995).
 \newblock Robust text-independent speaker identification using gaussian mixture
   speaker models.
 \newblock {\em IEEE transactions on Speech and Audio Processing}, 3(1):72--83.
+
+\bibitem[Schuller et~al. 2010]{schuller2010cross}
+Schuller, B., Vlasenko, B., Eyben, F., Wollmer, M., Stuhlsatz, A., Wendemuth,
+  A., and Rigoll, G. (2010).
+\newblock Cross-corpus acoustic emotion recognition: Variances and strategies.
+\newblock {\em IEEE Transactions on Affective Computing}, 1(2):119--131.
+
+\bibitem[Somervuo et~al. 2006]{somervuo2006parametric}
+Somervuo, P., Harma, A., and Fagerlund, S. (2006).
+\newblock Parametric representations of bird sounds for automatic species
+  recognition.
+\newblock {\em IEEE Transactions on Audio, Speech, and Language Processing},
+  14(6):2252--2263.
+
+\bibitem[Varga and Steeneken 1993]{varga1993assessment}
+Varga, A. and Steeneken, H.~J. (1993).
+\newblock Assessment for automatic speech recognition: Ii. noisex-92: A
+  database and an experiment to study the effect of additive noise on speech
+  recognition systems.
+\newblock {\em Speech communication}, 12(3):247--251.
 
 \end{thebibliography}

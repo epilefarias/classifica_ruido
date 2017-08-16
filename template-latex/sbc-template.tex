@@ -10,14 +10,14 @@
      
 \sloppy
 
-\title{Noise Classification Using Decision Comitee}
+\title{Comparison of Methods of Noise Classification}
 
-\author{Antônio Nascimento\inst{1}, Felipe de S. Farias\inst{1}, Marília Alves \inst{2}}
+\author{Antonio Nascimento\inst{1}, Felipe de S. Farias\inst{1}, Marilia Alves \inst{2}}
 
 
-\address{Programa de Pós-Graduação em Engenharia de Defesa \\ Instituto Militar de Engenharia (IME)\\
+\address{Programa de Pos-Graduacao em Engenharia de Defesa \\ Instituto Militar de Engenharia (IME)\\
 \nextinstitute
-  Programa de Pós-Graduação em Engenharia Elétrica \\ Instituto Militar de Engenharia (IME)
+  Programa de Pos-Graduacao em Engenharia Eletrica \\ Instituto Militar de Engenharia (IME)
 \nextinstitute
   \email{\{nascimento,felipe.farias,marilia.alves\}@ime.eb.br}
 }
@@ -34,34 +34,22 @@ Ok here we make the abstract. Needless to say it comes last. Should have max 10 
 
 \end{abstract}
      
-%\begin{resumo} 
-%  Este meta-artigo descreve o estilo a ser usado na confecção de artigos e
-%  resumos de artigos para publicação nos anais das conferências organizadas
-%  pela SBC. É solicitada a escrita de resumo e abstract apenas para os artigos
-%  escritos em português. Artigos em inglês deverão apresentar apenas abstract.
-%  Nos dois casos, o autor deve tomar cuidado para que o resumo (e o abstract)
-%  não ultrapassem 10 linhas cada, sendo que ambos devem estar na primeira
-%  página do artigo.
-%\end{resumo}
 
 
 \section{Introduction} \label{sec:intro}
-%\section{Introdução} \label{sec:intro}
+
 
 %I took some liberties in the sketch Nascimento gave us in the Telegram group, combining with this paper \cite{nakagawa2012speaker} to come up with this model you're seeing. Initially, this Section describes the problem we are attempting to solve. We have to describe the problem many audio signal processing tasks face when performed in noisy conditions. References are much appreciated.
 
 %After that, we should write some kind of small version of the next sections. Do it ONLY after writing all the other parts. Each paragraph in the other sections become some lines here.
 
-Many Acoustic Signal Processing tasks are performed in noisy conditions. Thus, the performance of those tasks is inferior in the presence of noise than when performed with clear inputs.
-%Muitas tarefas de Processamento de Sinais Acústicos são executadas em condições ruidosas. Quando há ruído, o desempenho de tais tarefas é inferior ao desempenho quando os sinais-alvo não têm ruído. \textbf{REFERENCIAS, REFERENCIAS}.
+Many Acoustic Signal Processing (ASP) tasks are performed in noisy conditions. The presence of noise, additive or otherwise, decreases the performance of those tasks, be it speaker recognition \cite{ming2007robust}, emotion recognition \cite{schuller2010cross}, source localization \cite{benesty2000adaptive} or speech recognition \cite{friesen2001speech}. Thus, it is imperative to study noise so we can better assess how it affects ASP tasks and how we can deal with it. Automatic classification of types of noise is an important part of this study, since the knowledge of the kind of noise present in a given situation is useful knowledge to better treat it \cite{may2012noise}.
 
-The problem of audio classification is being targeted by studies in the most diverse knowledge areas.\textbf{breve histórico aqui, com referências}. Statistical \cite{dal1988acoustic,peltonen2002computational}, stochastical (HMM) \cite{ma2003context}, using neural networks \cite{beritelli2005adaptive}, support vector machines. \textbf{REFERENCIAS FILHO DA PUT}
-%O problema de classificação de ruído tem sido tratado em diversas áreas do conhecimento. \textbf{breve histórico aqui, com referências}.
+There is extensive previous work in the field of audio classification. There is great variety in the methods used to perform this task, such as statistical methods \cite{dal1988acoustic,peltonen2002computational}, methods using stochastical knowledge such as \textit{Hidden Markov Models} (HMM) \cite{ma2003context}, using neural networks \cite{beritelli2005adaptive} and support vector machines \cite{cumani2012analysis}. There is variety also in the applications sought, such as speaker recognition \cite{kinnunen2010overview,murty2006combining,farrell1994speaker}, acoustic scene recognition \cite{piczak2015environmental,barchiesi2015acoustic} or animal species recognition \cite{somervuo2006parametric,lee2008automatic}. The noise classification is different only in application, but can be performed using any method used for audio classification \cite{beritelli2007adaptive,ma2006acoustic}.
 
+This work proposes to evaluate the performance of four common methods used in audio classification in the specific task of classify noise. To this end, we implement those methods in the same set of audio files containing different types of noise. These files are taken from the NOISEX database \cite{varga1993assessment}, a database comprised of audios of 15 types of noise. The evaluation follows these steps: The extraction of the the mel-cepstral coefficients of each audio file, construction of the models according to each method, classification and evaluation of the results. The methods compared are the Neural Network, Gaussian Mixture Model, Support Vector Machines and K-means.
 
-In this paper, we aim to evaluate four methods of noise classification. For each experiment, we use a database comprised of audios of 15 types of noise.
-
-The rest of this paper is organized as follows. Section \ref{class} introduces the task of noise classification, as long as the methods used in this paper. Section \ref{exp} describes the experiments performed and the results obtained and, finally, in Section \ref{conc} we present our conclusions about the results found, as long as the future works.
+The remainder of this paper is organized as follows. Section \ref{class} introduces the task of noise classification, as long as the methods used in this paper. Section \ref{exp} describes the experiments performed and the results obtained and, finally, in Section \ref{conc} we present our conclusions about the results found, as long as the future works.
 
 \section{Noise Classification} \label{class}
 
@@ -106,7 +94,7 @@ Here we describe the NOISEX database. Since it's an important part of this work,
 
 \subsection{Evaluation Metrics} \label{exp:metric}
 
-ISSO É UMA SUGESTÃO
+ISSO EH UMA SUGESTAO
 
 Here we can describe how we evaluate the performance of each experiment.
 
@@ -114,6 +102,35 @@ Here we can describe how we evaluate the performance of each experiment.
 
 You may be wondering why have only the 'results' and not the 'experiments' subsection. This is because we already told the reader everything he has to know in the previous sections. Section \ref{class} describes the different methods and Sections \ref{exp:setup} and \ref{exp:data} describe the details of the experiments.
 
+
+\begin{table}[ht]
+\centering
+\caption{Accuracy per class for the methods compared.}
+\label{tab:acc}
+\begin{tabular}{l|llll}
+\hline
+Class & K-means & GMM & Neural Network & SVM \\
+\hline
+Babble & 86,01\% & 98,90\% & & \\
+Bucanneer 1 & 97,11\% & 99,31\% & & \\
+Bucanneer 2 & 98,86\% & 99,69\% & & \\
+Destroyer Engine & 99,64\% & 99,67\% & & \\
+Destroyer Ops & 91,79\% & 97,66\% & &\\
+F16 & 96,67\% & 99,10\% & &\\
+Factory 1 & 59,06\% & 91,11\% & &\\
+Factory 2 & 94,10\% & 95,26\% & &\\
+HF Channel & 100,00\% & 99,99\% & &\\
+Leopard & 98,69\% & 98,93\% & &\\
+M109 & 93,89\% & 99,01\% & &\\
+Machine Gun & 7,45\% & 99,77\% & &\\
+Pink & 99,76\% & 98,38\% & &\\
+Volvo & 90,78\% & 99,67\% & &\\
+White & 99,95\% & 99,96\% & &\\
+\hline
+\textbf{OVERALL} & 87,78\% & 98,43\% & & \\
+\hline
+\end{tabular}
+\end{table}
 
 \begin{table}[h]
 \centering
@@ -140,36 +157,6 @@ Volvo & & & & & & & & & & & & & & & \\
 White & & & & & & & & & & & & & & & \\
 \hline
 \end{tabular}}
-\end{table}
-
-
-
-
-\begin{table}[h]
-\centering
-\caption{Accuracy per class for the K-means classification}
-\label{tab:acckmeans}
-\begin{tabular}{ll}
-\hline
-Class & Accuracy \\
-\hline
-Babble & 86,01\%\\
-Bucanneer 1 & 97,11\%\\
-Bucanneer 2 & 98,86\%\\
-Destroyer Engine & 99,64\% \\
-Destroyer Ops & 91,79\%\\
-F16 & 96,67\%\\
-Factory 1 & 59,06\%\\
-Factory 2 & 94,10\%\\
-HF Channel & 100,00\%\\
-Leopard & 98,69\% \\
-M109 & 93,89\%\\
-Machine Gun & 7,45\%\\
-Pink & 99,76\%\\
-Volvo & 90,78\%\\
-White & 99,95\%\\
-\hline
-\end{tabular}
 \end{table}
 
 \section{Conclusions} \label{conc}
