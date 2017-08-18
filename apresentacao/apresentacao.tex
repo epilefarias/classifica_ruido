@@ -84,7 +84,7 @@
     %%******************************************************************************
     \usefonttheme[onlymath]{serif}
     %um dos dois abaixo
-    \newcommand{\currentframe}{\hspace{2.3cm}\insertframenumber/\inserttotalframenumber}
+    \newcommand{\currentframe}{\hspace{2.3cm}\insertframenumber}%/\inserttotalframenumber}
     %\setbeamertemplate{footline}[page number]
 
     \setbeamertemplate{navigation symbols}{}
@@ -118,7 +118,7 @@
 %% PÁGINA DO TÍTULO
 %%******************************************************************************
 
-\title[Ciência de Dados]{Comparação de Métodos de Comparação de Ruído Acústico}
+\title[Ciência de Dados]{Comparação de Métodos de Classificação de Ruído Acústico}
 %\title[Short Title]{Long Title}
 
 \author[Nascimento, Farias, Alves]
@@ -130,14 +130,14 @@ Antônio Nascimento, Felipe Farias e Marília Alves
 }
 
 
-\institute[Stanford]{%
-Stanford University \\
+\institute[IME]{%
+Instituto Militar de Engenharia \\
 %Universidade do Estado do Amazonas
 }
 
-\date[Maio de 2017] % (optional, should be abbreviation of conference name)
+\date[Agosto de 2017] % (optional, should be abbreviation of conference name)
 %{Simpósio Brasileiro de Telecomunicações \\ 
-{Maio de 2017}
+{Agosto de 2017}
 % - Either use conference name or its abbreviation.
 
 
@@ -173,496 +173,257 @@ Stanford University \\
 %% SEÇÕES
 %%==============================================================================
 
-\section{O Problema de Seleção de Sinais}
+\section{Processamento de Sinais Acústicos em Ruído}
 
 
 \begin{frame}
 	\justifying
-  	\frametitle{Seleção de Sinais}
+  	\frametitle{Tarefas de PDS}
   	
   	\begin{itemize}
   		 \setlength\itemsep{1em}
-  		\item Em seleção de sinais, sinais considerados ótimos são os que minimizam a probabilidade de erro $P_e$.
-  		\item Caso de duas hipóteses:
-  		\begin{itemize}
-  			\item Há duas hipóteses $h_1$ e $h_2$.
-  			\item Os sinais são descritos como os processos $p_1(x)$ e $p_2(x)$
-  			%\item Qual conjunto de parâmetros $\alpha$ ou $\beta$ diminui a chance de confusão.
-  			\item Qual conjunto de parâmetros $\alpha$ ou $\beta$ \textbf{minimiza} $P_e$.
-  		\end{itemize}
-
-
-  		\item Nem sempre é possível expressar analiticamente a probabilidade de erro.
-  		\end{itemize}
-\end{frame}
-
-
-\section{Medidas de Distância}
-  		
-\begin{comment}
-
-\begin{frame}
-  	\frametitle{Medida de Distância}
-  	\begin{itemize}
-  		\setlength\itemsep{1em}
-  		\item Descrição numérica do quão longe estão dois objetos.
-  		\item Obedece às condições:
-  		\begin{itemize}
-  			\item $d(x,y) \geq 0$.
-	  		\item $d(x,y) = 0, x = y$.
-	  		\item $d(x,y) = d(y,x)$.
-	  		\item $d(x,z) \leq d(x,y) + d(y,z)$.
-  		\end{itemize}
-  		
-		\item Não há medidas de distância que têm esta relação direta com a probabilidade de erro.	
+  		\item Tarefas de PDS  		
   	\end{itemize}
 \end{frame}
-
-\end{comment}
-
-\begin{frame}
-  	\frametitle{Medidas de Distância}
-  	\begin{itemize}
-  		\setlength\itemsep{1em}
-  		\item Descrição numérica do quão longe estão dois objetos.
-  		\begin{itemize}
-  			\item Pearson (1921)
-  			\item Estatística-$D^2$ de Mahalanobis (1925)
-  			\item Função Discriminante Linear de Fisher (1936)
-  			\item \textbf{Divergência} de Jeffreys (1947)
-  			\item[]
-  			\item \color {red}{\textbf{Distância de Bhattacharyya}} (1943)
-  		\end{itemize}
-  		\item Não há relação direta com a probabilidade de erro.	
-  	\end{itemize}
-\end{frame}
-
-\begin{frame}
-%\justifying
-	\frametitle{A Divergência}
-
-	\begin{itemize}
-		%\setlength\itemsep{1em}
-		\item Introduzida por Jeffreys em 1947.
-		\item[] Dada a taxa de similaridade $$L(x) = \frac{p_1(x)}{p_2(x)}$$
-		\item[] A divergência $$ J = E_1[\ln L(x)] - E_2[\ln L(x)]$$
-		\item[] Em que $$E_i[\ln L(x)] = \int[\ln L(x)]p_i(x)dx, i = 1,2$$
-	\end{itemize}	  
-	
-\end{frame}
-
-\begin{frame}
-	
-	\frametitle{A Divergência em Seleção de Sinais}
-	
-	\begin{itemize}
-		\setlength\itemsep{1em}
-		\item Parâmetro $\alpha$ melhor que $\beta$ se:
-		\begin{itemize}
-			\item $J(\alpha) > J(\beta)$
-		\end{itemize}		 
-		
-		\item Depende apenas da média de $p_1(x)$ e $p_2(x)$
-		
-		\item \textbf{Se $J(\alpha) > J(\beta)$, há um conjunto de probabilidades \textit{a priori} que}
-	\end{itemize}
-$$ P_e(\alpha,\pi) < P_e(\beta,\pi) $$	
-	
-
-  
-\end{frame}
-
-\begin{frame}
-
-	\frametitle{A Distância de Bhattacharyya}
-	
-	\begin{itemize}
-		\item Introduzida por Bhattacharyya em 1943.
-%		\item[] Dada a taxa de similaridade $L(x) = \frac{p_1(x)}{p_2(x)}$.
-		\item[] $$ B = \text{a distância de Bhattacharyya } = -\ln \rho $$ .
-		\item[] Em que $\rho$ é o coeficiente de Bhattacharyya dado por $$\rho = \int \sqrt{p_1(x)p_2(x)dx}$$.
-	\end{itemize}
-\end{frame}
-
-
-\begin{frame}
-	
-	\frametitle{A Distância de Bhattacharyya em Seleção de Sinais}
-	
-	\begin{itemize}
-		\setlength\itemsep{1em}
-		\item Parâmetro $\alpha$ melhor que $\beta$ se:
-		\begin{itemize}
-			\item $B(\alpha) > B(\beta)$, ou analogamente $\rho(\alpha) < \rho(\beta)$.
-		\end{itemize}		 
-		\item \textbf{Se $B(\alpha) > B(\beta)$, há um conjunto de probabilidades \textit{a priori} que}
-	\end{itemize}
-$$ P_e(\alpha,\pi) < P_e(\beta,\pi) $$
-
-
-\end{frame}
-
-\begin{comment}
 
 \begin{frame}
 	\justifying
-	\frametitle{Teorema de Blackwell}
-
-  
-\end{frame}
-
-\end{comment}
-
-
-
-\section{Aplicações Em Seleção de Sinais}
-
-\begin{frame}
-    \frametitle{Aplicações em Seleção de Sinais}
-    
-    \begin{itemize}
-    	\setlength\itemsep{2em}
-        \item Processos Gaussianos com Funções de Valor Médio Desiguais
-    	\item Processos Gaussianos com Funções de Covariância Desiguais
-	   % \item Processos de Poisson com Funções de Valor Médio Desiguais
-	\end{itemize}
-    
-\end{frame}
-
-
-\begin{frame}
-	\frametitle{Processos Gaussianos com Funções de Valor Médio Desiguais - 1}
-	
-	\begin{itemize}
-		\item[] Dados dois processos Gaussianos: $$ h_1:x(t) = m_1(t) + n(t)$$ $$ h_2:x(t) = m_2(t) + n(t)$$ $$ t \in T, m_1 \neq m_2$$
-		
-%		\item[] Com $m_1 \neq m_2$
-		
-		\item[] Energia:		$$ \int_{T}^{} {m_i}^2(t)dt = E, i=1,2 $$
-		\item[] Coeficiente de correlação:		$$ \int_{T}^{} m_1(t)m_2(t)dt = E\mu $$
-	\end{itemize}
+  	\frametitle{Tarefas de PDS em ruído}
+  	
+  	\begin{itemize}
+  		 \setlength\itemsep{1em}
+  		\item Queda de desempenho nas tarefas de PDS 
+  	\end{itemize}
 \end{frame}
 
 \begin{frame}
+	\justifying
+  	\frametitle{Classificação de Ruídos Acústicos}
+  	
+  	\begin{itemize}
+  		 \setlength\itemsep{1em}
+  		\item Objetivos do trabalho
+ 	\end{itemize}
+  		
+\end{frame}
 
-	\frametitle{Processos Gaussianos com Funções de Valor Médio Desiguais - 2}
-	
-	\begin{itemize}	
-	
-		\item \textbf{Quais os valores de $m_1$ e $m_2$ que maximizam $B$ e $J$?}
-		
-		\item[] $$ B = \frac{1}{8}J=\frac{1}{8}\frac{2E}{N_0}(1-\mu) $$
-		\item Para maximizar $B$ e $J$, $m_i(t)$ devem ser antipodais, ou seja: $$ m_1(t) = -m_2(t)$$
-	\end{itemize}
-	
 
-	
+\section{Extração de Atributos do Áudio}
+  		
+\begin{frame}
+  	\frametitle{LPC}
+  	\begin{itemize}
+  		\setlength\itemsep{1em}
+  		\item VAI QUE É TUA MARILIA
+  		\item LPC
+  	\end{itemize}
 \end{frame}
 
 
 \begin{frame}
-    \frametitle{Processos Gaussianos com Funções de Covariância Desiguais - 1}
-    
-    \begin{itemize}
-    
-    	\item Dados dois sinais Gaussianos transmitidos por $L$ canais. 
-		$$ h^{(i)}:x_k(t)  = \alpha_km_2(t) + n_k(t), k = 1,...,L, i = 1,2 $$
-		
-		\item[] Com energia
-		
-		$$ \int_{T}^{} {m_i}^2(t)dt = E/L, i=1,2 $$
-		
-    	\item[] \textbf{Qual o número ideal de canais?}
-    \end{itemize}
-    
+  	\frametitle{MFCC}
+  	\begin{itemize}
+  		\setlength\itemsep{1em}
+  		\item Coeficientes Mel-Cepstrais
+  		\begin{itemize}
+  			\item porque é melhor?
+  		\end{itemize}
+  	\end{itemize}
 \end{frame}
 
+\section{Experimentos}
+
+\subsection{Base de Dados}
 
 \begin{frame}
-    \frametitle{Processos Gaussianos com Funções de Covariância Desiguais - 2}
-    
-    \begin{itemize}
-    
-    	\item[] Supondo os dois canais ortogonais
-	
-	
-		\item Pela Divergência
-		$$ J = \frac{R^2}{R+L}, R = \frac{2E\sigma^2}{N_0} $$
-	
-		\item Pela distância de Bhattacharyya
-	
-		$$ \rho = e^{-B} = \frac{{(1+\frac{R}{L})}^L}{{(1+\frac{R}{2L})}^{2L}}, R = \frac{2E\sigma^2}{N_0}$$
-	
-		$$ L_{opt} = R/3.08 $$
-    \end{itemize}
-    
-\end{frame}
-
-\begin{comment}
-\begin{frame}
-    \frametitle{Processos de Poisson com Funções de Valor Médio Desiguais}
-    
-    
-\end{frame}
-
-\end{comment}
-
-\section{Algumas outras propriedades de $B$ e $J$}
-
-
-\begin{frame}
-    \frametitle{Algumas outras propriedades de $B$ e $J$}
+    \frametitle{A base de dados NOISEX-92}
     
     \begin{itemize}
     	\setlength\itemsep{1em}
-        \item Interpretação Geométrica.
-        \begin{itemize}
-        	\item Relação de $\rho$ com a informação de Fisher
-        \end{itemize}
-    	\item Distância Variacional de Kolmogorov
-    	\begin{itemize}
-			\item Limites Superiores e Inferiores da Probabilidade de Erro    	
-    	\end{itemize}
-	    \item Fórmulas Explícitas
+        \item ela é linda
+    	\item ela é cheirosa
 	\end{itemize}
     
 \end{frame}
 
+\subsection{Validação Cruzada}
+
 \begin{frame}
-    \frametitle{Interpretação Geométrica}
-    
+	\frametitle{Validação Cruzada}
+	
 	\begin{itemize}
-		\setlength\itemsep{1em}
-		\item Cada valor $\sqrt{p_i(x)}$ é o cosseno da direção de dois vetores no espaço de $x$.
-		\item O coeficiente de Bhattacharyya é o cosseno do ângulo entre os dois vetores.
-		$$ \rho = cos\bigtriangleup$$
-		$$ \bigtriangleup = \text{ângulo entre os vetores}$$
-		$$ 0 < \bigtriangleup < \pi/2 $$
-		$$ 0 < \rho < 1 $$
-	\end{itemize}	    
-    
-
-
+		\item Explicar o \textit{K-fold} aqui
+	\end{itemize}
 \end{frame}
 
+\subsection{Métodos Utilizados}
 
 \begin{frame}
-	\frametitle{Relação de $\rho$ com Informação de Fisher}
 
-	\begin{itemize}
-
-		\item[] Supondo $ p(x|\theta), \theta, 0 \leq \theta \leq 1$ e usando a representação geométrica.
-		$$ \cos \delta s = \int \sqrt{p(x|\theta)p(x|\theta+ \delta\theta)}dx \stackrel{.}{=} 1 - \frac{(\delta \theta)^2}{8} \int_{-\infty}^{\infty} \frac{[\dot{p}(x|\theta)]^2}{p(x|\theta)} dx $$
-		\item[] No limite em que $\delta s$ e $\delta \theta$ tendem a zero nós obtemos
-		$$ (\frac{ds}{d\theta})^2 = \frac{1}{4} \int_{-\infty}^{\infty} \frac{[\dot{p}(x|\theta)]^2}{p(x|\theta)} dx  = - \frac{1}{4} \int_{-\infty}^{\infty} p(x|\theta) [\frac{\partial^2}{\partial \theta^2} \ln p(x|\theta)] d\theta = \frac{1}{4} $$
+	\frametitle{K-Means 1 (intro) \textbf{EU NAO SEI O NOME DO ALGORITMO QUE A MARILIA USA}}
 	
+	\begin{itemize}	
+		\item introdução bonitinha aqui
 	\end{itemize}
 	
 \end{frame}
 
 
-%\begin{comment}
-
 \begin{frame}
-    \frametitle{A Distância Variacional de Kolmogorov} 
 
-	\begin{itemize}
-		\item A Distância Variacional de Kolmogorov:
-		$$ K(\pi) = \frac{1}{2}\int (|\pi_1p_1(x)-\pi_2p_2(x)|dx) $$
-		\item Relação com $\rho$:
-		$$ \sqrt{1-4\pi_1\pi_2\rho^2} \geq 2K(\pi) \geq 1 - \sqrt{\pi_1\pi_2\rho} $$
-		\item relação com $P_e$:
-		$$ P_e = \pi_1 - K(\pi),  $$	
-		
+	\frametitle{K-Means 2 (especificações) \textbf{EU NAO SEI O NOME DO ALGORITMO QUE A MARILIA USA}}
+	
+	\begin{itemize}	
+		\item detalhes das especificações aqui
 	\end{itemize}
-    
+	
 \end{frame}
 
 
-
 \begin{frame}
-    \frametitle{Limites Superiores e Inferiores em Probabilidade de Erro}
-    
-    \begin{itemize}
-		\item[] Combinando os resultados anteriores temos:
-		$$ 2\pi_1 - \sqrt{1-4\pi_1\pi_2\rho^2} \leq 2P_e =  2\pi_1  - K(\pi) \leq 2\pi_1 - 2\sqrt{\pi_1\pi_2\rho} $$    
-    
-    	\item[] Que, no caso de $\pi_1 = \pi_2 = \frac{1}{2}$, resulta em:
-    	$$ \frac{1}{4} \rho^2 \leq \frac{1}{2} (1-\sqrt{1-\rho}) \leq P_e \leq \frac{1}{2}\rho $$
-    	\item[] E, considerando $J$:
-    	$$ P_e \geq \rho^2/8 \geq \frac{1}{8} e^{J/2} $$
-    \end{itemize}
-    
-\end{frame}
 
-
-\begin{comment}
-
-\begin{frame}
-    \frametitle{Limites Superiores e Inferiores em Probabilidade de Erro}
-    
-    Em um caso especial a probabilidade de erro $P_e$ é dada por 
-	\begin{equation*}
-		\ln P_e \stackrel{.}{=} -\ln \rho = B, P_e \rightarrow 0
-	\end{equation*}
+	\frametitle{K-Means 3 (resultados) \textbf{EU NAO SEI O NOME DO ALGORITMO QUE A MARILIA USA}}
 	
-	Caso estas condições sejam atendidas:
-	
-	\begin{itemize}
-	
-	\item Os componentes $X_i$ da observação $ X' = X_1,...,X_N $ são independentes e identicamente distribuídos.
-	\item $\int [p_1(x)]^{1-t}[p_2(x)]^tdx $ é simétrico  em $t$.
-	\item $N$ é grande.
-
+	\begin{itemize}	
+		\item aquele tabelão maroto
 	\end{itemize}
-  
+	
 \end{frame}
 
 
 \begin{frame}
-    \frametitle{A Divergência e a Probabilidade de Erro}
-    
-    É possível obter um limite inferior para a probabilidade de erro em função da divergência $J$.
-    
-    A partir de 
-    
-    \begin{equation*}
-		2B = - \ln \rho \leq I(1,2) \text{ e } 2B \leq I(2,1)
-		\label{eq50}
-	\end{equation*}
+
+	\frametitle{Gaussian Mixture Model 1 (intro)}
 	
-	e
-	
-	\begin{equation*}
-		4B \leq J \text{ ou } \rho \geq \exp({J/4})
-		\label{eq51}
-	\end{equation*}
-
-	obtemos
-	
-	\begin{equation*}
-		P_e \geq \rho^2/8 \geq \frac{1}{8} e^{J/2}
-		\label{eq52}
-	\end{equation*}
-    
- 
-\end{frame}
-
-
-\end{comment}
-
-
-
-
-
-
-\subsection{Fórmulas Explícitas para $B$ e $J$}
-
-
-\begin{frame}
-    \frametitle{Fórmulas Explícitas para $B$ e $J$ - 1}
-
-	\begin{itemize}
-		\item Para Distribuições Multinomiais
-	\end{itemize}    
-	$$B = -\ln [\sum_{j=1}^{N} \sqrt{p_j^{(1)}p_j^{(2)}}] $$    
-	
-	\begin{itemize}
-		\item Para Distribuições de Poisson
-	\end{itemize}    
-	$$B = - \frac{1}{2} (\sqrt{m_1}-\sqrt{m_2})^2 $$    
-	
-    
-\end{frame}
-
-\begin{frame}
-    \frametitle{Fórmulas Explícitas para $B$ e $J$ - 2}
-
-	\begin{itemize}
-		\item Para Distribuições de Gaussianas Univariadas
-	\end{itemize}    
-	$$B = \frac{1}{4} \frac{(m_1-m_2)^2}{\sigma_1^2-\sigma_2^2} + \frac{1}{2} \ln \{\frac{\sigma_1^2+\sigma_2^2}{2\sigma_1\sigma_2}\}$$
-	\begin{itemize}
-		\item Para Distribuições de Gaussianas Multivariadas
-	\end{itemize}    
-	$$ B = \frac{1}{8} (m_1-m_2)'R^{1}(m_1-m_2) + \frac{1}{2} \ln \{\frac{det R}{\sqrt{det R_1. det R_2}}\}$$
-	
-    
-\end{frame}
-    
-    
-\begin{frame}
-    \frametitle{Fórmulas Explícitas para $B$ e $J$ - 3}
-    
-    
-    \begin{itemize}
-    	\item Para distribuições exponenciais.
-    	\begin{itemize}
-    		\item Divergência	
-    		
-    		$$ J = - \sum_{j = 1}^{r} \sum_{k = 1}^{r} \frac{\partial^2}{\partial V_j \partial V_k} \times \{ V_j(h_2) - V_j(h_1)\}\{ V_k(h_2) - V_k(h_1)\} $$    
-	
-			\item Distância de Bhattacharyya
-	
-			$$ B = - \ln \rho, \rho = \frac{\sqrt{b(h_j)b(h_i)}}{g (\{\frac{1}{2}V_j(h_1) +\frac{1}{2}V_j(h_2) \})} $$
-		\end{itemize}
+	\begin{itemize}	
+		\item introdução bonitinha aqui
 	\end{itemize}
-\end{frame}
-
-
-
-
-\section{Extensão para Tempo Contínuo}
-
-\begin{comment}
-
-\begin{frame}
-    \frametitle{Caso de M hipóteses}
-    Para o caso de M hipóteses, a distância média de Bhattacharyya
-
-%eq sem numero
-\begin{equation*}
-	\overline{B} = \sum_{i,j}^{M} \pi^{(i)}\pi^{(j)} \int_{-\infty}^{\infty} \sqrt{p_1(x)p_2(x)} dx
-\end{equation*}
-
-\end{frame}
-
-\end{comment}
-
-\begin{frame}
-
-	\frametitle{$B$ no Tempo Contínuo}
-
-	\begin{itemize}
 	
-		\item[] Definindo
-		
-		$$ \lim_{N \rightarrow \infty} q_{iN}(x) = \lim_{N \rightarrow \infty} \frac{p_{iN}(x)}{p_{iN}(x) + p_{2N}(x)} $$
+\end{frame}
 
-		\item[] Temos que
-		
-		$$ B = - \ln \rho, \text{ onde } \rho = \lim_{N \rightarrow \infty} \int \sqrt{q_{1N}(x)q_{2N}(x)}dx $$
-		
-		\item[] O que permite
 
-		$$ \frac{1}{8} \rho^2 \leq P_e \leq \frac{1}{2} \rho $$
+\begin{frame}
+
+	\frametitle{Gaussian Mixture Model 2 (especificações)}
+	
+	\begin{itemize}	
+		\item detalhes das especificações aqui
 	\end{itemize}
+	
+\end{frame}
 
+
+\begin{frame}
+
+	\frametitle{Gaussian Mixture Model 3 (resultados)}
+	
+	\begin{itemize}	
+		\item aquele tabelão maroto
+	\end{itemize}
+	
+\end{frame}
+
+
+\begin{frame}
+
+	\frametitle{Neural Network 1 (intro)}
+	
+	\begin{itemize}	
+		\item introdução bonitinha aqui
+	\end{itemize}
+	
+\end{frame}
+
+
+\begin{frame}
+
+	\frametitle{Neural Network 2 (especificações)}
+	
+	\begin{itemize}	
+		\item detalhes das especificações aqui
+	\end{itemize}
+	
+\end{frame}
+
+
+\begin{frame}
+
+	\frametitle{Neural Network 3 (resultados)}
+	
+	\begin{itemize}	
+		\item aquele tabelão maroto
+	\end{itemize}
+	
+\end{frame}
+
+
+\begin{frame}
+
+	\frametitle{Support Vector Machines 1 (intro)}
+	
+	\begin{itemize}	
+		\item introdução bonitinha aqui
+	\end{itemize}
+	
+\end{frame}
+
+
+\begin{frame}
+
+	\frametitle{Support Vector Machines 2 (especificações)}
+	
+	\begin{itemize}	
+		\item detalhes das especificações aqui
+	\end{itemize}
+	
+\end{frame}
+
+
+\begin{frame}
+
+	\frametitle{Support Vector Machines 3 (resultados)}
+	
+	\begin{itemize}	
+		\item aquele tabelão maroto
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}
+
+	\frametitle{Comparação}
+	
+	\begin{itemize}	
+		\item Tabela com a comparação entre os modelos.
+	\end{itemize}
+	
 \end{frame}
 
 \section{Considerações Finais}
 
 \begin{frame}
 
-	\frametitle{Considerações finais}
+	\frametitle{Conclusões}
 	
 	\begin{itemize}
 		\setlength\itemsep{1em}
 		
-		\item Medidas de distância ajudam na resolução de problemas de seleção de sinal de forma mais simples que calculando a probabilidade de erro.
-		%\item A Divergência e a Distância de Bhattacharyya são medidas de distância interessantes no contexto de seleção de sinais.
-		\item A distância de Bhattacharyya é mais fácil de calcular e fornece resultados por vezes melhores que a Divergência.
-		\item A distância de Bhattacharyya é utilizada até hoje no contexto de reconhecimento de padrões.
+		\item Concluímos que o trabalho foi muito trabalhoso.
+	
+	\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}
+
+	\frametitle{Trabalhos Futuros}
+	
+	\begin{itemize}
+		\setlength\itemsep{1em}
+		
+		\item Extender a comparação a outros métodos de classificação.
+		\item Investigar desempenho de comitê de classificação.
 	
 	\end{itemize}
 
@@ -677,9 +438,7 @@ $$ P_e(\alpha,\pi) < P_e(\beta,\pi) $$
     
     \begin{itemize}
     	\setlength\itemsep{2em}
-		\item Ao IME;
-        \item À professora Rosângela;
-        \item A todos aqui presentes!
+		\item Valeu galera!
 	\end{itemize}
 
 \end{frame}

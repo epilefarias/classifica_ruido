@@ -1,9 +1,0 @@
-\beamer@endinputifotherversion {3.36pt}
-\select@language {brazil}
-\beamer@sectionintoc {2}{O Problema de Sele\IeC {\c c}\IeC {\~a}o de Sinais}{3}{0}{1}
-\beamer@sectionintoc {3}{Medidas de Dist\IeC {\^a}ncia}{4}{0}{2}
-\beamer@sectionintoc {4}{Aplica\IeC {\c c}\IeC {\~o}es Em Sele\IeC {\c c}\IeC {\~a}o de Sinais}{9}{0}{3}
-\beamer@sectionintoc {5}{Algumas outras propriedades de $B$ e $J$}{14}{0}{4}
-\beamer@subsectionintoc {5}{1}{F\IeC {\'o}rmulas Expl\IeC {\'\i }citas para $B$ e $J$}{19}{0}{4}
-\beamer@sectionintoc {6}{Extens\IeC {\~a}o para Tempo Cont\IeC {\'\i }nuo}{22}{0}{5}
-\beamer@sectionintoc {7}{Considera\IeC {\c c}\IeC {\~o}es Finais}{23}{0}{6}
