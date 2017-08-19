@@ -40,6 +40,11 @@ Dal~Degan, N. and Prati, C. (1988).
   radio applications.
 \newblock {\em Signal Processing}, 15(1):43--56.
 
+\bibitem[Dhanalakshmi et~al. 2009]{dhanalakshmi2009classification}
+Dhanalakshmi, P., Palanivel, S., and Ramalingam, V. (2009).
+\newblock Classification of audio signals using svm and rbfnn.
+\newblock {\em Expert systems with applications}, 36(3):6069--6075.
+
 \bibitem[Farrell et~al. 1994]{farrell1994speaker}
 Farrell, K.~R., Mammone, R.~J., and Assaleh, K.~T. (1994).
 \newblock Speaker recognition using neural networks and conventional
@@ -66,13 +71,6 @@ Lee, C.-H., Han, C.-C., and Chuang, C.-C. (2008).
   two-dimensional cepstral coefficients.
 \newblock {\em IEEE Transactions on Audio, Speech, and Language Processing},
   16(8):1541--1550.
-
-\bibitem[Lei et~al. 2014]{lei2014novel}
-Lei, Y., Scheffer, N., Ferrer, L., and McLaren, M. (2014).
-\newblock A novel scheme for speaker recognition using a phonetically-aware
-  deep neural network.
-\newblock In {\em Acoustics, Speech and Signal Processing (ICASSP), 2014 IEEE
-  International Conference on}, pages 1695--1699. IEEE.
 
 \bibitem[Li et~al. 2001]{li2001classification}
 Li, D., Sethi, I.~K., Dimitrova, N., and McGee, T. (2001).
@@ -152,6 +150,14 @@ Varga, A. and Steeneken, H.~J. (1993).
   database and an experiment to study the effect of additive noise on speech
   recognition systems.
 \newblock {\em Speech communication}, 12(3):247--251.
+
+\bibitem[Wu et~al. 2007]{wu2007leaf}
+Wu, S.~G., Bao, F.~S., Xu, E.~Y., Wang, Y.-X., Chang, Y.-F., and Xiang, Q.-L.
+  (2007).
+\newblock A leaf recognition algorithm for plant classification using
+  probabilistic neural network.
+\newblock In {\em Signal Processing and Information Technology, 2007 IEEE
+  International Symposium on}, pages 11--16. IEEE.
 
 \bibitem[Xu et~al. 2005]{xu2005automatic}
 Xu, C., Maddage, N.~C., and Shao, X. (2005).

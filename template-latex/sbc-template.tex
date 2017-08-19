@@ -53,9 +53,9 @@ The remainder of this paper is organized as follows. Section \ref{class} introdu
 
 \section{Noise Classification} \label{class}
 
-In this section we should describe the audio classification task and how it applies to our specific problem, the noise classification.
+%In this section we should describe the audio classification task and how it applies to our specific problem, the noise classification.
 
-Additionally, we have to describe each method we use, in subsections.
+%Additionally, we have to describe each method we use, in subsections.
 
 \subsection{Extraction of Audio Attributes} \label{class:audioatt}
 
@@ -87,44 +87,91 @@ In the mel-cepstral analysis, the audio signal is filtered by \textit{K} bandpas
 
 In which $c_n$ is the coefficient for the $n^{th}$ frame and $S_k, k=(1,2,...,K)$ are the output of each bandpass filter.
 
+In this work, we used $K = 13$, and the $\delta_n = c_n - c_{n-1}$ and $\delta\delta = \delta_n - \delta_{n-1} $ coefficients were calculated, thus rendering 39 coefficients by frame.
+
 \subsection{Classification Methods} \label{class:meth}
-
-\subsubsection{Neural Network} \label{class:nn}
-
-One or two paragraphs should do. Don't forget the proper references (like this one \cite{lei2014novel}).
 
 \subsubsection{K-means} \label{class:kmeans}
 
 This is a method used in summarization. Didn't find references.
 
-\subsubsection{Gaussian Mixture Models} \label{class:gmm}
+\subsubsection{Gaussian Mixture Models (GMM)} \label{class:gmm}
 
-This section describes the use of Gaussian mixture models (GMM) in the task of noise representation and classification. Here is a good journal article for further reference \cite{reynolds1995robust}.
+%This section describes the use of Gaussian mixture models (GMM) in the task of noise representation and classification. Here is a good journal article for further reference \cite{reynolds1995robust}.
+
+The GMM is used based on the knowledge that a set of acoustic signal classes can be represented by it's component densities \cite{reynolds1995robust}. The GMM is a weighted sum of $K$ component densities, given by:
+
+\begin{equation}
+	p(\vec{x}|\lambda) = \sum_{k=1}^{K} p_kb_k(\vec{x})
+	\label{eq:gmm}
+\end{equation}
+
+Where $\vec{x}$ is a random vector representing our input signal, $K$ is the number of components of the signal, $p_k, k = 1,...,K$ are the mixture weights and $b_k(\vec{x}), k = 1,...,K$ are the component densities.
+
+Each class is represented by it's model $\lambda$:
+
+\begin{equation}
+	\lambda = \{ p_k, \vec{\mu}_k, \sum k \}, k = 1,...,K
+	\label{eq:lambda}
+\end{equation}
+
+Where $\vec{\mu}_k$ is the mean and $\sum k$ is the covariance matrix of each component density $b_k(\vec{x})$.
 
 
-\subsubsection{Support Vector Machines} \label{class:svm}
 
-Here we have a paper in audio classification using SVM \cite{cumani2012analysis}.
+\subsubsection{Support Vector Machines (SVM)} \label{class:svm}
 
+
+The SVM is a machine learning technique that has successfully been used in pattern recognition tasks, such as audio classification \cite{dhanalakshmi2009classification}. The basic idea of this technique is to estimate the hyperplane that better separates a group of data \cite{cumani2012analysis}. The hyperplane can be linear or be created using a kernel function to better do the separation.
+
+There are two distinct phases: in the training phase, the algorithm estimates the best hyperplane, searching for the one that maximizes the distance between the training data of different classes. In the test phase, the classification using the trained hyperplane is performed using different data. This way, we can assess the generalization capacity of the model.
+
+KERNEL QUADRATICO UTILIZADO
+
+
+\subsubsection{Neural Network} \label{class:nn}
+
+%One or two paragraphs should do. Don't forget the proper references (like this one \cite{lei2014novel}).
+
+Neural Network is an interconnected group of artificial neurons designed to simulate the functionality of a brain. It is organized in layers: the input layer, the hidden layer and the output layer. Each neuron has it's own weight and a activation function \cite{wu2007leaf}. 
+
+In the classification task, the weights of the neurons are updated by training the network with labeled data, until the network can yield the expected result in the output layer.
+
+50 NEURONS UTILIZADOS
 
 
 \section{Experiments} \label{exp}
 
-Here we will describe the experiments. It should contain an introductory paragraph containing the purpose of the experiments.
+%Here we will describe the experiments. It should contain an introductory paragraph containing the purpose of the experiments.
 
 \subsection{Experimental Setup} \label{exp:setup}
 
-This paragraph should have all the requirements to perform the experiment, including hardware, software and general conditions. Sometimes people put the database here, but i think it will provide greater value if we put it in it's own subsection.
+%This paragraph should have all the requirements to perform the experiment, including hardware, software and general conditions. Sometimes people put the database here, but i think it will provide greater value if we put it in it's own subsection.
+
+The experiments were performed using MATLAB, using the Neural Network toolbox and the SVM toolbox. They were performed in two separated computers. The K-means and GMM experiments were performed with an Intel-i7 1,8GHz processor, with ram memory of 8GB and Windows10 OS. The Neural Network and SVM experiments were performed with an an Intel-i3 processor, with ram memory of 4GB and Linux OS.
 
 \subsection{Database Description} \label{exp:data}
 
-Here we describe the NOISEX database. Since it's an important part of this work, we should take our time to properly describe it.
+%Here we describe the NOISEX database. Since it's an important part of this work, we should take our time to properly describe it.
 
-\subsection{Evaluation Metrics} \label{exp:metric}
+For this work we used the NOISEX database \cite{varga1993assessment}. This database is composed by 15 audio files, one for each of the 15 different classes of noises, which are shown in Table \ref{tab:noisex}. All the audio files are in .wav format, 3 minute and 55 seconds long and they have a bit rate of $319$ kbits per second.
 
-ISSO EH UMA SUGESTAO
+\begin{table}[ht]
+	\centering
+	\caption{Classes existing in the NOISEX database.}
+	\label{tab:noisex}
+	\begin{tabular}{lllll}
+		\hline
+		babble & buccaneer 1 & buccaneer 2 & destroyer engine& destroyer operations room\\
+		f16 & factory floor 1 & factory floor 2 & HF channel & leopard\\
+		m109 & machine gun & pink noise & volvo & white noise\\
+		\hline
+	\end{tabular}
+\end{table}
 
-Here we can describe how we evaluate the performance of each experiment.
+\subsection{Cross-Validation} \label{exp:crossv}
+
+The 4-fold cross-validation was performed. The accuracy reported in Table \ref{tab:acc} are the mean of the results in each test. This way, the generalization of each model is better asserted.
 
 \subsection{Results} \label{exp:res}
 
@@ -135,25 +182,39 @@ You may be wondering why have only the 'results' and not the 'experiments' subse
 \centering
 \caption{Confusion Matrix for Neural Network}
 \label{tab:confusion_nn}
-\resizebox{\textwidth}{!}{\begin{tabular}{l||l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\resizebox{\textwidth}{!}{\begin{tabular}{l||l|l|l|l|l|l|l|l|l|l|l|l|l|l|l}
 \hline
 & Babble & Bucc 1 & Bucc 2 & Dest Eng & Dest Ops & F16 & Fac 1 & Fac 2 & HFChn & Leop & M109 & MachGun & Pink & Volvo & White \\
 \hline
 \hline
 Babble & 6,5\% & & & & & & 0,1\% & 0,1\% & & & & & & & \\
+\hline
 Buccaneer 1 & &6,6\% & & & & & & & & & & & & & \\
+\hline
 Buccaneer 2  & & & 6,7\% & & & & & & & & & & & & \\
+\hline
 Destroyer Engine  & & & & 6,6\% & & & & & & & & & & & \\
+\hline
 Destroyer Ops & & & & & 6,5\%& & & & & & & & & & \\
+\hline
 F16 & & & & & & 6,6\% & & & & & & & & & \\
+\hline
 Factory 1 & & & & & & & 6,0\% &0,2\% & & & & & 0,1\% & & \\
+\hline
 Factory 2 & & & & & & & 0,3\%& 6,4\% & & & & & & & \\
+\hline
 HF Channel & & & & & & & & & 6,7\% & & & & & & \\
+\hline
 Leopard & & & & & & & & & &6,6\% & & & & & \\
+\hline
 M109 & & & & & & & & & & &6,6\% & & & & \\
+\hline
 Machine Gun & & & & & & & & & & & &6,6\% & & & \\
+\hline
 Pink & & & & & & & 0,2\% & & & & & &6,6\% & & \\
+\hline
 Volvo & & & & & & & & & & & & & &6,6\% & \\
+\hline
 White & & & & & & & & & & & & & & & 6,7\%\\
 \hline
 \end{tabular}}
@@ -168,23 +229,23 @@ White & & & & & & & & & & & & & & & 6,7\%\\
 \hline
 Class & K-means & GMM & Neural Network & SVM \\
 \hline
-Babble & 86,01\% & 98,90\% & 97,5\% & \\
-Bucanneer 1 & 97,11\% & 99,31\% & 99,1\% & \\
-Bucanneer 2 & 98,86\% & 99,69\% & 99,8\% & \\
-Destroyer Engine & 99,64\% & 99,67\% & 99,7\% & \\
-Destroyer Ops & 91,79\% & 97,66\% & 98,3\% &\\
-F16 & 96,67\% & 99,10\% & 99,2\% &\\
-Factory 1 & 59,06\% & 91,11\% & 92,3\% &\\
-Factory 2 & 94,10\% & 95,26\% & 94,7\% &\\
-HF Channel & 100,00\% & 99,99\% & 99,9\% &\\
-Leopard & 98,69\% & 98,93\% & 99,4\% &\\
-M109 & 93,89\% & 99,01\% & 99,3\% &\\
-Machine Gun & 7,45\% & 99,77\% & 99,5\% &\\
-Pink & 99,76\% & 98,38\% & 96,9\% &\\
-Volvo & 90,78\% & 99,67\% & 99,7\% &\\
-White & 99,95\% & 99,96\% & 100,0\% &\\
+Babble & 88,2\% & 98,9\% & 97,5\% &  \\
+Bucanneer 1 & 96,6\% & 99,1\% & 99,1\% & \\
+Bucanneer 2 & 98,8\% & 99,7\% & 99,8\% & \\
+Destroyer Engine & 99,8\% & 99,7\% & 99,7\% & \\
+Destroyer Ops & 90,8\% & 96,9\% & 98,3\% &\\
+F16 & 95,2\% & 99,10\% & 97,6\% &\\
+Factory 1 & 59,3\% & 87,6\% & 92,3\% &\\
+Factory 2 & 93,9\% & 95,0\% & 94,7\% &\\
+HF Channel & 100,0\% & 100,0\% & 99,9\% &\\
+Leopard & 99,1\% & 99,6\% & 99,4\% &\\
+M109 & 94,1\% & 99,3\% & 99,3\% &\\
+Machine Gun & 7,1\% & 99,5\% & 99,5\% &\\
+Pink & 99,7\% & 98,0\% & 96,9\% &\\
+Volvo & 90,8\% & 99,4\% & 99,7\% &\\
+White & 99,9\% & 99,9\% & 100,0\% &\\
 \hline
-\textbf{OVERALL} & 87,78\% & 98,43\% & 98,4\% & \\
+\textbf{OVERALL} & 89,2\% & 98,0\% & 98,4\% & \\
 \hline
 \end{tabular}
 \end{table}
