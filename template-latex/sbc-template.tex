@@ -47,7 +47,7 @@ Many Acoustic Signal Processing (ASP) tasks are performed in noisy conditions. T
 
 There is extensive previous work in the field of audio classification. There is great variety in the methods used to perform this task, such as statistical methods \cite{dal1988acoustic,peltonen2002computational}, methods using stochastical knowledge such as \textit{Hidden Markov Models} (HMM) \cite{ma2003context}, using neural networks \cite{beritelli2005adaptive} and support vector machines \cite{cumani2012analysis}. There is variety also in the applications sought, such as speaker recognition \cite{kinnunen2010overview,murty2006combining,farrell1994speaker}, acoustic scene recognition \cite{piczak2015environmental,barchiesi2015acoustic} or animal species recognition \cite{somervuo2006parametric,lee2008automatic}. The noise classification is different only in application, but can be performed using any method used for audio classification \cite{beritelli2007adaptive,ma2006acoustic}.
 
-This work proposes to evaluate the performance of four common methods used in audio classification in the specific task of classify noise. To this end, we implement those methods in the same set of audio files containing different types of noise. These files are taken from the NOISEX database \cite{varga1993assessment}, a database comprised of audios of 15 types of noise. The evaluation follows these steps: The extraction of the the mel-cepstral coefficients of each audio file, construction of the models according to each method, classification and evaluation of the results. The methods compared are the Neural Network, Gaussian Mixture Model, Support Vector Machines and K-means.
+This work proposes to evaluate the performance of four common methods used in audio classification in the specific task of classify noise. To this end, we implement those methods in the same set of audio files containing different types of noise. These files are taken from the NOISEX database \cite{varga1993assessment}, a database comprised of audios of 15 types of noise. The evaluation follows these steps: The extraction of attributes of each audio file, construction of the models according to each method, classification and evaluation of the results. The methods compared are the Neural Network, Gaussian Mixture Model, Support Vector Machines and K-means.
 
 The remainder of this paper is organized as follows. Section \ref{class} introduces the task of noise classification, as long as the methods used in this paper. Section \ref{exp} describes the experiments performed and the results obtained and, finally, in Section \ref{conc} we present our conclusions about the results found, as long as the future works.
 
@@ -57,24 +57,43 @@ In this section we should describe the audio classification task and how it appl
 
 Additionally, we have to describe each method we use, in subsections.
 
-\subsection{Mel-Cepstral Coefficient Extraction} \label{class:melcepst}
+\subsection{Extraction of Audio Attributes} \label{class:audioatt}
 
-Here we talk about mel-cepstral coefficients and how to use them to identify each class of noise.
+The first step towards classification is the extraction of attributes from the data that are useful for the classification algorithms. In this Section we present two of the most widely used in the literature, the Linear Predictive Coefficient \cite{Rabiner:1993:FSR:153687} and the Mel-Frequency Cepstral Coefficient (MFCC) \cite{xu2005automatic}. In this work, we will use the MFCC to represent our audios.
 
-\subsection{Neural Network} \label{class:nn}
+\subsubsection{Linear Predictive Coefficient (LPC)}\label{class:lpc}
+
+In the Linear Predictive analysis of audio, the audio is divided into frames of the same size, usually 20ms, and each frame is predicted as the linear weighted sum of the \textit{n} previous frames, there \textit{n} represents the order of the prediction \cite{Rabiner:1993:FSR:153687}. 
+
+\begin{equation}
+	\hat{s} = \sum_{k=0}^{n} \alpha_ks(n-k)
+	\label{eq:lpc}
+\end{equation}
+
+
+The difference between the prediction and the actual values of the frame is computed as error. The coefficients $\alpha_k$ are obtained minimizing the prediction error through the least squares minimization.
+
+
+\subsubsection{Mel-Frequency Cepstral Coefficient (MFCC)} \label{class:mfcc}
+
+
+
+\subsection{Classification Methods} \label{class:meth}
+
+\subsubsection{Neural Network} \label{class:nn}
 
 One or two paragraphs should do. Don't forget the proper references (like this one \cite{lei2014novel}).
 
-\subsection{K-means} \label{class:kmeans}
+\subsubsection{K-means} \label{class:kmeans}
 
 This is a method used in summarization. Didn't find references.
 
-\subsection{Gaussian Mixture Models} \label{class:gmm}
+\subsubsection{Gaussian Mixture Models} \label{class:gmm}
 
 This section describes the use of Gaussian mixture models (GMM) in the task of noise representation and classification. Here is a good journal article for further reference \cite{reynolds1995robust}.
 
 
-\subsection{Support Vector Machines} \label{class:svm}
+\subsubsection{Support Vector Machines} \label{class:svm}
 
 Here we have a paper in audio classification using SVM \cite{cumani2012analysis}.
 

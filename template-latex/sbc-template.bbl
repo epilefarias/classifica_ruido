@@ -117,6 +117,11 @@ Piczak, K.~J. (2015).
 \newblock In {\em Machine Learning for Signal Processing (MLSP), 2015 IEEE 25th
   International Workshop on}, pages 1--6. IEEE.
 
+\bibitem[Rabiner and Juang 1993]{Rabiner:1993:FSR:153687}
+Rabiner, L. and Juang, B.-H. (1993).
+\newblock {\em Fundamentals of Speech Recognition}.
+\newblock Prentice-Hall, Inc., Upper Saddle River, NJ, USA.
+
 \bibitem[Reynolds and Rose 1995]{reynolds1995robust}
 Reynolds, D.~A. and Rose, R.~C. (1995).
 \newblock Robust text-independent speaker identification using gaussian mixture
@@ -142,5 +147,11 @@ Varga, A. and Steeneken, H.~J. (1993).
   database and an experiment to study the effect of additive noise on speech
   recognition systems.
 \newblock {\em Speech communication}, 12(3):247--251.
+
+\bibitem[Xu et~al. 2005]{xu2005automatic}
+Xu, C., Maddage, N.~C., and Shao, X. (2005).
+\newblock Automatic music classification and summarization.
+\newblock {\em IEEE transactions on speech and audio processing},
+  13(3):441--450.
 
 \end{thebibliography}
