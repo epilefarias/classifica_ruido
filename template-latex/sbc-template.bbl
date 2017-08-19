@@ -74,6 +74,11 @@ Lei, Y., Scheffer, N., Ferrer, L., and McLaren, M. (2014).
 \newblock In {\em Acoustics, Speech and Signal Processing (ICASSP), 2014 IEEE
   International Conference on}, pages 1695--1699. IEEE.
 
+\bibitem[Li et~al. 2001]{li2001classification}
+Li, D., Sethi, I.~K., Dimitrova, N., and McGee, T. (2001).
+\newblock Classification of general audio data for content-based retrieval.
+\newblock {\em Pattern recognition letters}, 22(5):533--544.
+
 \bibitem[Ma et~al. 2006]{ma2006acoustic}
 Ma, L., Milner, B., and Smith, D. (2006).
 \newblock Acoustic environment classification.

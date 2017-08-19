@@ -76,7 +76,16 @@ The difference between the prediction and the actual values of the frame is comp
 
 \subsubsection{Mel-Frequency Cepstral Coefficient (MFCC)} \label{class:mfcc}
 
+The Mel-Frequency cepstrum is efficient in modeling pitch and frequency content of audio signals. It yields better results when coding audio for in classification tasks than the LPC \cite{li2001classification}.
 
+In the mel-cepstral analysis, the audio signal is filtered by \textit{K} bandpass filters, which have constant mel-frequency interval and cover the $0-4000$Hz frequency range. The MFCCs are calculated by the following equation:
+
+\begin{equation}
+	c_n = \sqrt{\frac{2}{K}} \sum_{k=1}^{K} (\log S_k) \cos [n(k-0.5)\pi/K]
+	\label{eq:mfcc}
+\end{equation}
+
+In which $c_n$ is the coefficient for the $n^{th}$ frame and $S_k, k=(1,2,...,K)$ are the output of each bandpass filter.
 
 \subsection{Classification Methods} \label{class:meth}
 
@@ -122,6 +131,35 @@ Here we can describe how we evaluate the performance of each experiment.
 You may be wondering why have only the 'results' and not the 'experiments' subsection. This is because we already told the reader everything he has to know in the previous sections. Section \ref{class} describes the different methods and Sections \ref{exp:setup} and \ref{exp:data} describe the details of the experiments.
 
 
+\begin{table}[h]
+\centering
+\caption{Confusion Matrix for Neural Network}
+\label{tab:confusion_nn}
+\resizebox{\textwidth}{!}{\begin{tabular}{l||l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+& Babble & Bucc 1 & Bucc 2 & Dest Eng & Dest Ops & F16 & Fac 1 & Fac 2 & HFChn & Leop & M109 & MachGun & Pink & Volvo & White \\
+\hline
+\hline
+Babble & 6,5\% & & & & & & 0,1\% & 0,1\% & & & & & & & \\
+Buccaneer 1 & &6,6\% & & & & & & & & & & & & & \\
+Buccaneer 2  & & & 6,7\% & & & & & & & & & & & & \\
+Destroyer Engine  & & & & 6,6\% & & & & & & & & & & & \\
+Destroyer Ops & & & & & 6,5\%& & & & & & & & & & \\
+F16 & & & & & & 6,6\% & & & & & & & & & \\
+Factory 1 & & & & & & & 6,0\% &0,2\% & & & & & 0,1\% & & \\
+Factory 2 & & & & & & & 0,3\%& 6,4\% & & & & & & & \\
+HF Channel & & & & & & & & & 6,7\% & & & & & & \\
+Leopard & & & & & & & & & &6,6\% & & & & & \\
+M109 & & & & & & & & & & &6,6\% & & & & \\
+Machine Gun & & & & & & & & & & & &6,6\% & & & \\
+Pink & & & & & & & 0,2\% & & & & & &6,6\% & & \\
+Volvo & & & & & & & & & & & & & &6,6\% & \\
+White & & & & & & & & & & & & & & & 6,7\%\\
+\hline
+\end{tabular}}
+\end{table}
+
+
 \begin{table}[ht]
 \centering
 \caption{Accuracy per class for the methods compared.}
@@ -130,53 +168,28 @@ You may be wondering why have only the 'results' and not the 'experiments' subse
 \hline
 Class & K-means & GMM & Neural Network & SVM \\
 \hline
-Babble & 86,01\% & 98,90\% & & \\
-Bucanneer 1 & 97,11\% & 99,31\% & & \\
-Bucanneer 2 & 98,86\% & 99,69\% & & \\
-Destroyer Engine & 99,64\% & 99,67\% & & \\
-Destroyer Ops & 91,79\% & 97,66\% & &\\
-F16 & 96,67\% & 99,10\% & &\\
-Factory 1 & 59,06\% & 91,11\% & &\\
-Factory 2 & 94,10\% & 95,26\% & &\\
-HF Channel & 100,00\% & 99,99\% & &\\
-Leopard & 98,69\% & 98,93\% & &\\
-M109 & 93,89\% & 99,01\% & &\\
-Machine Gun & 7,45\% & 99,77\% & &\\
-Pink & 99,76\% & 98,38\% & &\\
-Volvo & 90,78\% & 99,67\% & &\\
-White & 99,95\% & 99,96\% & &\\
+Babble & 86,01\% & 98,90\% & 97,5\% & \\
+Bucanneer 1 & 97,11\% & 99,31\% & 99,1\% & \\
+Bucanneer 2 & 98,86\% & 99,69\% & 99,8\% & \\
+Destroyer Engine & 99,64\% & 99,67\% & 99,7\% & \\
+Destroyer Ops & 91,79\% & 97,66\% & 98,3\% &\\
+F16 & 96,67\% & 99,10\% & 99,2\% &\\
+Factory 1 & 59,06\% & 91,11\% & 92,3\% &\\
+Factory 2 & 94,10\% & 95,26\% & 94,7\% &\\
+HF Channel & 100,00\% & 99,99\% & 99,9\% &\\
+Leopard & 98,69\% & 98,93\% & 99,4\% &\\
+M109 & 93,89\% & 99,01\% & 99,3\% &\\
+Machine Gun & 7,45\% & 99,77\% & 99,5\% &\\
+Pink & 99,76\% & 98,38\% & 96,9\% &\\
+Volvo & 90,78\% & 99,67\% & 99,7\% &\\
+White & 99,95\% & 99,96\% & 100,0\% &\\
 \hline
-\textbf{OVERALL} & 87,78\% & 98,43\% & & \\
+\textbf{OVERALL} & 87,78\% & 98,43\% & 98,4\% & \\
 \hline
 \end{tabular}
 \end{table}
 
-\begin{table}[h]
-\centering
-\caption{Model of confusion matrix PRA EU N TER Q FAZER ISSO DE NOVO}
-\label{tab:confusion}
-\resizebox{\textwidth}{!}{\begin{tabular}{l|lllllllllllllll}
-\hline
-& Babble & Buccaneer 1 & Buccaneer 2 & Destroyer Engine & Destroyer Ops & F16 & Factory 1 & Factory 2 & HF Channel & Leopard & M109 & Machine Gun & Pink & Volvo & White \\
-\hline
-Babble & & & & & & & & & & & & & & & \\
-Buccaneer 1 & & & & & & & & & & & & & & & \\
-Buccaneer 2  & & & & & & & & & & & & & & & \\
-Destroyer Engine  & & & & & & & & & & & & & & & \\
-Destroyer Ops & & & & & & & & & & & & & & & \\
-F16 & & & & & & & & & & & & & & & \\
-Factory 1 & & & & & & & & & & & & & & & \\
-Factory 2 & & & & & & & & & & & & & & & \\
-HF Channel & & & & & & & & & & & & & & & \\
-Leopard & & & & & & & & & & & & & & & \\
-M109 & & & & & & & & & & & & & & & \\
-Machine Gun & & & & & & & & & & & & & & & \\
-Pink & & & & & & & & & & & & & & & \\
-Volvo & & & & & & & & & & & & & & & \\
-White & & & & & & & & & & & & & & & \\
-\hline
-\end{tabular}}
-\end{table}
+
 
 \section{Conclusions} \label{conc}
 

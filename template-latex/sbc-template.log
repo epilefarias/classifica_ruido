@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.11.4)  19 AUG 2017 12:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.11.4)  19 AUG 2017 13:47
 entering extended mode
 **./sbc-template.tex
 (sbc-template.tex
@@ -272,24 +272,24 @@ Underfull \hbox (badness 1286) in paragraph at lines 48--49
 [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 127.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 136.
 
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd"
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 127.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 136.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(sbc-template.bbl [3] [4] [5]) [6] (sbc-template.aux) ) 
+[3] (sbc-template.bbl [4] [5]) [6] (sbc-template.aux) ) 
 Here is how much of TeX's memory you used:
- 2741 strings out of 493334
- 38764 string characters out of 3139234
- 125430 words of memory out of 3000000
- 6222 multiletter control sequences out of 15000+200000
+ 2743 strings out of 493334
+ 38798 string characters out of 3139234
+ 131456 words of memory out of 3000000
+ 6224 multiletter control sequences out of 15000+200000
  21033 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,8n,28p,946b,319s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -305,7 +305,7 @@ iKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><D:/Program Files/MiKTeX 2.9/fonts
 es/utmb8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><D
 :/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/Program Files/M
 iKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on sbc-template.pdf (6 pages, 140380 bytes).
+Output written on sbc-template.pdf (6 pages, 146651 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
