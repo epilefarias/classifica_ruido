@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.11.4)  19 AUG 2017 18:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.11.4)  19 AUG 2017 20:31
 entering extended mode
 **./sbc-template.tex
 (sbc-template.tex
@@ -281,10 +281,20 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 161.
 
-Overfull \hbox (7.64162pt too wide) in paragraph at lines 163--170
+Overfull \hbox (35.55327pt too wide) in paragraph at lines 163--170
  [][] 
  []
 
+[4]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 226.
+
+ ("D:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 226.
+
+(sbc-template.bbl [5] [6])
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -294,29 +304,29 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(sbc-template.bbl [4] [5] [6] [7]) [8] (sbc-template.aux) ) 
+[7] [8] (sbc-template.aux) ) 
 Here is how much of TeX's memory you used:
- 2750 strings out of 493334
- 38919 string characters out of 3139234
- 187531 words of memory out of 3000000
- 6231 multiletter control sequences out of 15000+200000
+ 2766 strings out of 493334
+ 39182 string characters out of 3139234
+ 183539 words of memory out of 3000000
+ 6244 multiletter control sequences out of 15000+200000
  21033 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,8n,28p,946b,319s stack positions out of 5000i,500n,10000p,200000b,50000s
-{D:/Program Files/Mi
-KTeX 2.9/fonts/enc/dvips/base/8r.enc}<D:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmex10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmmi12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmmi8.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.p
-fb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Program Files/MiKTeX
- 2.9/fonts/type1/urw/courier/ucrr8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type
-1/urw/helvetic/uhvb8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
-mb8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><D:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/Program Files/MiKTeX
- 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on sbc-template.pdf (8 pages, 168294 bytes).
+{D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8
+r.enc}<D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><D
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmsy8.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/uc
+rr8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><D:/P
+rogram Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/Program Files/MiKT
+eX 2.9/fonts/type1/urw/times/utmbi8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/typ
+e1/urw/times/utmr8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr
+i8a.pfb>
+Output written on sbc-template.pdf (8 pages, 170236 bytes).
 PDF statistics:
  82 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -17,8 +17,8 @@
 
 \address{Programa de Pos-Graduacao em Engenharia de Defesa \\ Instituto Militar de Engenharia (IME)\\
 \nextinstitute
-  Programa de Pos-Graduacao em Engenharia Eletrica \\ Instituto Militar de Engenharia (IME)
-\nextinstitute
+  Programa de Pos-Graduacao em Engenharia Eletrica \\ Instituto Militar de Engenharia (IME)\\
+%\nextinstitute
   \email{\{antonio.nascimento,felipe.farias,marilia.alves\}@ime.eb.br}
 }
 
@@ -30,7 +30,7 @@
 
 %This is the paper model for SBC conferences. I made some instructions so we can use it to write our own paper. It contains a suggestion of placement of the sections. 
 
-Ok here we make the abstract. Needless to say it comes last. Should have max 10 lines.
+Noise is one of the main problems affecting the performance of most acoustic signal processing tasks. Thus, understanding and analyzing noise is fundamental to pursue better results. One of the paths in this better understanding is the automatic classification of noise. In this work we compare four classification methods widely researched in the literature in the task of noise classification. This classification was performed in the NOISEX database and the methods chosen to be compared were the K-means, Gaussian Mixture Model, Support Vector Machines and Neural Network. Results show that the SVM performs the classification better than the other methods studied.
 
 \end{abstract}
      
@@ -126,7 +126,7 @@ The SVM is a machine learning technique that has successfully been used in patte
 
 There are two distinct phases: in the training phase, the algorithm estimates the best hyperplane, searching for the one that maximizes the distance between the training data of different classes. In the test phase, the classification using the trained hyperplane is performed using different data. This way, we can assess the generalization capacity of the model.
 
-KERNEL QUADRATICO UTILIZADO
+The experiments shown in Section \ref{exp} were performed using the quadratic kernel.% was used KERNEL QUADRATICO UTILIZADO
 
 
 \subsubsection{Neural Network} \label{class:nn}
@@ -137,7 +137,7 @@ Neural Network is an interconnected group of artificial neurons designed to simu
 
 In the classification task, the weights of the neurons are updated by training the network with labeled data, until the network can yield the expected result in the output layer.
 
-50 NEURONS UTILIZADOS
+In this work we used a network with 50 neurons.%50 NEURONS UTILIZADOS
 
 
 \section{Experiments} \label{exp}
@@ -162,9 +162,9 @@ For this work we used the NOISEX database \cite{varga1993assessment}. This datab
 	\label{tab:noisex}
 	\begin{tabular}{lllll}
 		\hline
-		babble & buccaneer 1 & buccaneer 2 & destroyer engine& destroyer operations room\\
-		f16 & factory floor 1 & factory floor 2 & HF channel & leopard\\
-		m109 & machine gun & pink noise & volvo & white noise\\
+		Babble & Buccaneer 1 & Buccaneer 2 & Destroyer Engine& Destroyer Operations Room\\
+		F16 & Factory Floor 1 & Factory Floor 2 & HF Channel & Leopard\\
+		M109 & Machine Gun & Pink Noise & Volvo & White Noise\\
 		\hline
 	\end{tabular}
 \end{table}
@@ -195,24 +195,76 @@ Babble & 88,2\% & 98,9\% & 97,5\% &  \\
 Bucanneer 1 & 96,6\% & 99,1\% & 99,1\% & \\
 Bucanneer 2 & 98,8\% & 99,7\% & 99,8\% & \\
 Destroyer Engine & 99,8\% & 99,7\% & 99,7\% & \\
-Destroyer Ops & 90,8\% & 96,9\% & 98,3\% &\\
-F16 & 95,2\% & 99,10\% & 97,6\% &\\
-Factory 1 & 59,3\% & 87,6\% & 92,3\% &\\
-Factory 2 & 93,9\% & 95,0\% & 94,7\% &\\
-HF Channel & 100,0\% & 100,0\% & 99,9\% &\\
-Leopard & 99,1\% & 99,6\% & 99,4\% &\\
-M109 & 94,1\% & 99,3\% & 99,3\% &\\
-Machine Gun & 7,1\% & 99,5\% & 99,5\% &\\
-Pink & 99,7\% & 98,0\% & 96,9\% &\\
-Volvo & 90,8\% & 99,4\% & 99,7\% &\\
-White & 99,9\% & 99,9\% & 100,0\% &\\
+Destroyer Ops & 90,8\% & 96,9\% & 98,3\% & \\
+F16 & 95,2\% & 99,1\% & 97,6\% & \\
+Factory 1 & 59,3\% & 87,6\% & 92,3\% & \\
+Factory 2 & 93,9\% & 95,0\% & 94,7\% & \\
+HF Channel & 100,0\% & 100,0\% & 99,9\% & \\
+Leopard & 99,1\% & 99,6\% & 99,4\% & \\
+M109 & 94,1\% & 99,3\% & 99,3\% & \\
+Machine Gun & 7,1\% & 99,5\% & 99,5\% & \\
+Pink Noise & 99,7\% & 98,0\% & 96,9\% & \\
+Volvo & 90,8\% & 99,4\% & 99,7\% & \\
+White Noise & 99,9\% & 99,9\% & 100,0\% & \\
 \hline
 \textbf{OVERALL} & 89,2\% & 98,0\% & 98,4\% & \\
 \hline
 \end{tabular}
 \end{table}
 
-The confusion matrices for each method are shown in Tables \ref{tab:confusion_kmeans}, \ref{tab:confusion_gmm}, \ref{tab:confusion_svm} and \ref{tab:confusion_nn}.
+The confusion matrices for each method are shown in Tables \ref{tab:confusion_kmeans}, \ref{tab:confusion_gmm}, \ref{tab:confusion_svm} and \ref{tab:confusion_nn}, in the Appendix \ref{extra}.
+
+\section{Conclusions} \label{conc}
+
+In this work, we aimed to compare four classification methods widely known in the literature. For this, we did the classification in NOISEX, a known noise database. Three of the four methods performed above 95\%, ensuring noise classification is feasible as part of enhancement techniques for acoustic signal processing tasks. The inconsistencies of the performance as well as the poorer result renders the k-means method the less suitable of the ones studied in this work. Another shortcoming of the methods is the need of training, which is time consuming and demands a large training data set.
+
+\subsection{Future Works}
+
+Some possible future paths for this work are listed below:
+
+\begin{itemize}
+	\item explore Deep Learning techniques. The experiments performed in this work depend on pre-processing the audio data before doing the classification. Deep learning techniques can use the raw data to classify, thus eliminating this step. 
+	\item Expand the dataset. This work focused on a well known database, but it would be more representative to use them in more extensive data, or noise mixed with clean audio, which is the usual in Audio Signal Processing tasks;
+	\item Explore the state-of-the-art classification methods. This work focused in methods widely used and known in audio classification. There are evolutions of these methods that yield better results than the ones pictured here in other applications of audio classification, and may yield better results in this specific task.
+\end{itemize}
+
+%Here we conclude the paper. I suck at this, so pls someone do it for me. The one thing I know is that we have to summarize our findings and link it to our problem stated in the introduction, telling the reader whether we were successful or not in the task we proposed in the beginning.
+
+%exemplo de figura
+
+%\begin{figure}[ht]
+%\centering
+%\includegraphics[width=.5\textwidth]{fig1.jpg}
+%\caption{A typical figure}
+%\label{fig:exampleFig1}
+%\end{figure}
+
+%\begin{figure}[ht]
+%\centering
+%\includegraphics[width=.3\textwidth]{fig2.jpg}
+%\caption{This figure is an example of a figure caption taking more than one
+%  line and justified considering margins mentioned in %Section~\ref{sec:figs}.}
+%\label{fig:exampleFig2}
+%\end{figure}
+
+
+% EXEMPLO DE TABELA
+
+%\begin{table}[ht]
+%\centering
+%\caption{Variables to be considered on the evaluation of interaction  techniques}
+%\label{tab:exTable1}
+%\includegraphics[width=.7\textwidth]{table.jpg}
+%\end{table}
+
+
+
+\bibliographystyle{sbc}
+\bibliography{sbc-template}
+
+\appendix
+
+\section{Extra Results} \label{extra}
 
 \begin{table}[ht]
 \centering
@@ -381,45 +433,5 @@ White & & & & & & & & & & & & & & & 6,7\%\\
 \hline
 \end{tabular}}
 \end{table}
-
-
-
-
-
-\section{Conclusions} \label{conc}
-
-%Here we conclude the paper. I suck at this, so pls someone do it for me. The one thing I know is that we have to summarize our findings and link it to our problem stated in the introduction, telling the reader whether we were successful or not in the task we proposed in the beginning.
-
-%exemplo de figura
-
-%\begin{figure}[ht]
-%\centering
-%\includegraphics[width=.5\textwidth]{fig1.jpg}
-%\caption{A typical figure}
-%\label{fig:exampleFig1}
-%\end{figure}
-
-%\begin{figure}[ht]
-%\centering
-%\includegraphics[width=.3\textwidth]{fig2.jpg}
-%\caption{This figure is an example of a figure caption taking more than one
-%  line and justified considering margins mentioned in %Section~\ref{sec:figs}.}
-%\label{fig:exampleFig2}
-%\end{figure}
-
-
-% EXEMPLO DE TABELA
-
-%\begin{table}[ht]
-%\centering
-%\caption{Variables to be considered on the evaluation of interaction  techniques}
-%\label{tab:exTable1}
-%\includegraphics[width=.7\textwidth]{table.jpg}
-%\end{table}
-
-
-
-\bibliographystyle{sbc}
-\bibliography{sbc-template}
 
 \end{document}
