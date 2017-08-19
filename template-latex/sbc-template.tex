@@ -175,12 +175,174 @@ The 4-fold cross-validation was performed. The accuracy reported in Table \ref{t
 
 \subsection{Results} \label{exp:res}
 
-You may be wondering why have only the 'results' and not the 'experiments' subsection. This is because we already told the reader everything he has to know in the previous sections. Section \ref{class} describes the different methods and Sections \ref{exp:setup} and \ref{exp:data} describe the details of the experiments.
+%You may be wondering why have only the 'results' and not the 'experiments' subsection. This is because we already told the reader everything he has to know in the previous sections. Section \ref{class} describes the different methods and Sections \ref{exp:setup} and \ref{exp:data} describe the details of the experiments.
 
+In this section we present and analyze the results obtained in the experiments. The accuracy of the classifiers is presented in Table \ref{tab:acc}, overall and divided by class.
+
+The first thing to be noted is that the best result is obtained by the SVM classifier, followed closely by the overall accuracy of the Neural Network and the GMM classifiers. The k-means classifier is almost 10\% less accurate than the other three.
+
+The most accurate classes are 'white' and 'hf channel' and the result for 'machine gun' in the k-means classifier is inexplicably low.
+
+\begin{table}[ht]
+\centering
+\caption{Accuracy per class for the methods compared.}
+\label{tab:acc}
+\begin{tabular}{l|llll}
+\hline
+Class & K-means & GMM & Neural Network & SVM \\
+\hline
+Babble & 88,2\% & 98,9\% & 97,5\% &  \\
+Bucanneer 1 & 96,6\% & 99,1\% & 99,1\% & \\
+Bucanneer 2 & 98,8\% & 99,7\% & 99,8\% & \\
+Destroyer Engine & 99,8\% & 99,7\% & 99,7\% & \\
+Destroyer Ops & 90,8\% & 96,9\% & 98,3\% &\\
+F16 & 95,2\% & 99,10\% & 97,6\% &\\
+Factory 1 & 59,3\% & 87,6\% & 92,3\% &\\
+Factory 2 & 93,9\% & 95,0\% & 94,7\% &\\
+HF Channel & 100,0\% & 100,0\% & 99,9\% &\\
+Leopard & 99,1\% & 99,6\% & 99,4\% &\\
+M109 & 94,1\% & 99,3\% & 99,3\% &\\
+Machine Gun & 7,1\% & 99,5\% & 99,5\% &\\
+Pink & 99,7\% & 98,0\% & 96,9\% &\\
+Volvo & 90,8\% & 99,4\% & 99,7\% &\\
+White & 99,9\% & 99,9\% & 100,0\% &\\
+\hline
+\textbf{OVERALL} & 89,2\% & 98,0\% & 98,4\% & \\
+\hline
+\end{tabular}
+\end{table}
+
+The confusion matrices for each method are shown in Tables \ref{tab:confusion_kmeans}, \ref{tab:confusion_gmm}, \ref{tab:confusion_svm} and \ref{tab:confusion_nn}.
+
+\begin{table}[ht]
+\centering
+\caption{Confusion Matrix for the K-means classifier}
+\label{tab:confusion_kmeans}
+\resizebox{\textwidth}{!}{\begin{tabular}{l||l|l|l|l|l|l|l|l|l|l|l|l|l|l|l}
+\hline
+& Babble & Bucc 1 & Bucc 2 & Dest Eng & Dest Ops & F16 & Fac 1 & Fac 2 & HFChn & Leop & M109 & MachGun & Pink & Volvo & White \\
+\hline
+\hline
+Babble & 6,5\% & & & & & & 0,1\% & 0,1\% & & & & & & & \\
+\hline
+Buccaneer 1 & &6,6\% & & & & & & & & & & & & & \\
+\hline
+Buccaneer 2  & & & 6,7\% & & & & & & & & & & & & \\
+\hline
+Destroyer Engine  & & & & 6,6\% & & & & & & & & & & & \\
+\hline
+Destroyer Ops & & & & & 6,5\%& & & & & & & & & & \\
+\hline
+F16 & & & & & & 6,6\% & & & & & & & & & \\
+\hline
+Factory 1 & & & & & & & 6,0\% &0,2\% & & & & & 0,1\% & & \\
+\hline
+Factory 2 & & & & & & & 0,3\%& 6,4\% & & & & & & & \\
+\hline
+HF Channel & & & & & & & & & 6,7\% & & & & & & \\
+\hline
+Leopard & & & & & & & & & &6,6\% & & & & & \\
+\hline
+M109 & & & & & & & & & & &6,6\% & & & & \\
+\hline
+Machine Gun & & & & & & & & & & & &6,6\% & & & \\
+\hline
+Pink & & & & & & & 0,2\% & & & & & &6,6\% & & \\
+\hline
+Volvo & & & & & & & & & & & & & &6,6\% & \\
+\hline
+White & & & & & & & & & & & & & & & 6,7\%\\
+\hline
+\end{tabular}}
+\end{table}
 
 \begin{table}[h]
 \centering
-\caption{Confusion Matrix for Neural Network}
+\caption{Confusion Matrix for the GMM classifier}
+\label{tab:confusion_gmm}
+\resizebox{\textwidth}{!}{\begin{tabular}{l||l|l|l|l|l|l|l|l|l|l|l|l|l|l|l}
+\hline
+& Babble & Bucc 1 & Bucc 2 & Dest Eng & Dest Ops & F16 & Fac 1 & Fac 2 & HFChn & Leop & M109 & MachGun & Pink & Volvo & White \\
+\hline
+\hline
+Babble & 6,5\% & & & & & & 0,1\% & 0,1\% & & & & & & & \\
+\hline
+Buccaneer 1 & &6,6\% & & & & & & & & & & & & & \\
+\hline
+Buccaneer 2  & & & 6,7\% & & & & & & & & & & & & \\
+\hline
+Destroyer Engine  & & & & 6,6\% & & & & & & & & & & & \\
+\hline
+Destroyer Ops & & & & & 6,5\%& & & & & & & & & & \\
+\hline
+F16 & & & & & & 6,6\% & & & & & & & & & \\
+\hline
+Factory 1 & & & & & & & 6,0\% &0,2\% & & & & & 0,1\% & & \\
+\hline
+Factory 2 & & & & & & & 0,3\%& 6,4\% & & & & & & & \\
+\hline
+HF Channel & & & & & & & & & 6,7\% & & & & & & \\
+\hline
+Leopard & & & & & & & & & &6,6\% & & & & & \\
+\hline
+M109 & & & & & & & & & & &6,6\% & & & & \\
+\hline
+Machine Gun & & & & & & & & & & & &6,6\% & & & \\
+\hline
+Pink & & & & & & & 0,2\% & & & & & &6,6\% & & \\
+\hline
+Volvo & & & & & & & & & & & & & &6,6\% & \\
+\hline
+White & & & & & & & & & & & & & & & 6,7\%\\
+\hline
+\end{tabular}}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Confusion Matrix for the SVM classifier}
+\label{tab:confusion_svm}
+\resizebox{\textwidth}{!}{\begin{tabular}{l||l|l|l|l|l|l|l|l|l|l|l|l|l|l|l}
+\hline
+& Babble & Bucc 1 & Bucc 2 & Dest Eng & Dest Ops & F16 & Fac 1 & Fac 2 & HFChn & Leop & M109 & MachGun & Pink & Volvo & White \\
+\hline
+\hline
+Babble & 6,5\% & & & & & & 0,1\% & 0,1\% & & & & & & & \\
+\hline
+Buccaneer 1 & &6,6\% & & & & & & & & & & & & & \\
+\hline
+Buccaneer 2  & & & 6,7\% & & & & & & & & & & & & \\
+\hline
+Destroyer Engine  & & & & 6,6\% & & & & & & & & & & & \\
+\hline
+Destroyer Ops & & & & & 6,5\%& & & & & & & & & & \\
+\hline
+F16 & & & & & & 6,6\% & & & & & & & & & \\
+\hline
+Factory 1 & & & & & & & 6,0\% &0,2\% & & & & & 0,1\% & & \\
+\hline
+Factory 2 & & & & & & & 0,3\%& 6,4\% & & & & & & & \\
+\hline
+HF Channel & & & & & & & & & 6,7\% & & & & & & \\
+\hline
+Leopard & & & & & & & & & &6,6\% & & & & & \\
+\hline
+M109 & & & & & & & & & & &6,6\% & & & & \\
+\hline
+Machine Gun & & & & & & & & & & & &6,6\% & & & \\
+\hline
+Pink & & & & & & & 0,2\% & & & & & &6,6\% & & \\
+\hline
+Volvo & & & & & & & & & & & & & &6,6\% & \\
+\hline
+White & & & & & & & & & & & & & & & 6,7\%\\
+\hline
+\end{tabular}}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Confusion Matrix for the Neural Network classifier}
 \label{tab:confusion_nn}
 \resizebox{\textwidth}{!}{\begin{tabular}{l||l|l|l|l|l|l|l|l|l|l|l|l|l|l|l}
 \hline
@@ -221,40 +383,12 @@ White & & & & & & & & & & & & & & & 6,7\%\\
 \end{table}
 
 
-\begin{table}[ht]
-\centering
-\caption{Accuracy per class for the methods compared.}
-\label{tab:acc}
-\begin{tabular}{l|llll}
-\hline
-Class & K-means & GMM & Neural Network & SVM \\
-\hline
-Babble & 88,2\% & 98,9\% & 97,5\% &  \\
-Bucanneer 1 & 96,6\% & 99,1\% & 99,1\% & \\
-Bucanneer 2 & 98,8\% & 99,7\% & 99,8\% & \\
-Destroyer Engine & 99,8\% & 99,7\% & 99,7\% & \\
-Destroyer Ops & 90,8\% & 96,9\% & 98,3\% &\\
-F16 & 95,2\% & 99,10\% & 97,6\% &\\
-Factory 1 & 59,3\% & 87,6\% & 92,3\% &\\
-Factory 2 & 93,9\% & 95,0\% & 94,7\% &\\
-HF Channel & 100,0\% & 100,0\% & 99,9\% &\\
-Leopard & 99,1\% & 99,6\% & 99,4\% &\\
-M109 & 94,1\% & 99,3\% & 99,3\% &\\
-Machine Gun & 7,1\% & 99,5\% & 99,5\% &\\
-Pink & 99,7\% & 98,0\% & 96,9\% &\\
-Volvo & 90,8\% & 99,4\% & 99,7\% &\\
-White & 99,9\% & 99,9\% & 100,0\% &\\
-\hline
-\textbf{OVERALL} & 89,2\% & 98,0\% & 98,4\% & \\
-\hline
-\end{tabular}
-\end{table}
 
 
 
 \section{Conclusions} \label{conc}
 
-Here we conclude the paper. I suck at this, so pls someone do it for me. The one thing I know is that we have to summarize our findings and link it to our problem stated in the introduction, telling the reader whether we were successful or not in the task we proposed in the beginning.
+%Here we conclude the paper. I suck at this, so pls someone do it for me. The one thing I know is that we have to summarize our findings and link it to our problem stated in the introduction, telling the reader whether we were successful or not in the task we proposed in the beginning.
 
 %exemplo de figura
 
