@@ -173,76 +173,95 @@ Instituto Militar de Engenharia \\
 %% SEÇÕES
 %%==============================================================================
 
-\section{Processamento de Sinais Acústicos em Ruído}
+\section{Introdução}
 
+\subsection{Processamento de Sinais Acústicos em Ruído}
 
 \begin{frame}
 	\justifying
-  	\frametitle{Tarefas de PDS}
+  	\frametitle{Ruído em Tarefas de PDS}
   	
   	\begin{itemize}
-  		 \setlength\itemsep{1em}
-  		\item Tarefas de PDS  		
+  		\setlength\itemsep{1em}
+  		\item Tarefas de Processamento de Sinais Acústicos
+        \begin{itemize}
+        	\item Reconehcimento de Locutor
+            \item Localização
+            \item Reconhecimento de Fala
+        \end{itemize}
+        \item Ruído é \textbf{o principal} desafio.
+        \begin{itemize}
+        \item Queda de rendimento.
+        \end{itemize}
   	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\justifying
-  	\frametitle{Tarefas de PDS em ruído}
-  	
+  	\frametitle{Estudar e Analisar Ruído}
   	\begin{itemize}
   		 \setlength\itemsep{1em}
-  		\item Queda de desempenho nas tarefas de PDS 
+  		\item Detecção (presença/ausência)
+        \item Classificação
+        \begin{itemize}
+        \item Inclusão em Ferramentas de Realce
+        \end{itemize}
   	\end{itemize}
 \end{frame}
 
+\subsection{Objetivos}
+
 \begin{frame}
 	\justifying
-  	\frametitle{Classificação de Ruídos Acústicos}
+  	\frametitle{Objetivos do Trabalho}
   	
   	\begin{itemize}
-  		 \setlength\itemsep{1em}
-  		\item Objetivos do trabalho
+  		\setlength\itemsep{1em}
+  		\item Comparar desempenho de técnicas de clasificação de áudio conhecidas na literatura na tarefa de classificação de ruído.
+        
  	\end{itemize}
   		
 \end{frame}
 
+\begin{frame}
+	\justifying
+  	\frametitle{Metodologia}
+  	
+  	\begin{figure}[ht]
+    	\centering
+		\includegraphics[width=\textwidth]{diagrama_artigo.jpg}
+		\caption{Diagrama da Classificação}
+		\label{fig:diagclass}
+	\end{figure}
 
-\section{Extração de Atributos do Áudio}
   		
-\begin{frame}
-  	\frametitle{LPC}
-  	\begin{itemize}
-  		\setlength\itemsep{1em}
-  		\item VAI QUE É TUA MARILIA
-  		\item LPC
-  	\end{itemize}
 \end{frame}
 
-
-\begin{frame}
-  	\frametitle{MFCC}
-  	\begin{itemize}
-  		\setlength\itemsep{1em}
-  		\item Coeficientes Mel-Cepstrais
-  		\begin{itemize}
-  			\item porque é melhor?
-  		\end{itemize}
-  	\end{itemize}
-\end{frame}
-
-\section{Experimentos}
-
-\subsection{Base de Dados}
+\section{Técnicas Utilizadas}
 
 \begin{frame}
     \frametitle{A base de dados NOISEX-92}
     
     \begin{itemize}
     	\setlength\itemsep{1em}
-        \item ela é linda
-    	\item ela é cheirosa
+        \item 15 classes
+    	\item Formato .wav
+        \item Tamanho: 3m55s
 	\end{itemize}
+    
+    \begin{table}[ht]
+	\centering
+	\caption{Classes na base de dados NOISEX.}
+	\label{tab:noisex}
+	\resizebox{\textwidth}{!}{\begin{tabular}{lllll}
+		\hline
+		Babble & Buccaneer 1 & Buccaneer 2 & Destroyer Engine & Destroyer Operations Room\\
+		F16 & Factory Floor 1 & Factory Floor 2 & HF Channel & Leopard\\
+		M109 & Machine Gun & Pink Noise & Volvo & White Noise\\
+		\hline
+	\end{tabular}}
+\end{table}
+    
     
 \end{frame}
 
@@ -251,27 +270,85 @@ Instituto Militar de Engenharia \\
 \begin{frame}
 	\frametitle{Validação Cruzada}
 	
-	\begin{itemize}
-		\item Explicar o \textit{K-fold} aqui
+	\begin{figure}[ht]
+    	\centering
+		\includegraphics[width=.4\textwidth]{crossvalid.jpg}
+		\caption{Diagrama da Classificação}
+		\label{fig:diagclass}
+	\end{figure}
+    
+\end{frame}
+
+
+\subsection{Extração de Atributos do Áudio}
+  		
+%\begin{frame}
+%  	\frametitle{LPC}
+%  	\begin{itemize}
+%  		\setlength\itemsep{1em}
+%  		\item VAI QUE É TUA MARILIA
+%  		\item LPC
+%  	\end{itemize}
+%\end{frame}
+
+
+\begin{frame}
+  	\frametitle{Mel-Frequency Cepstral Coefficient (MFCC)}
+  	%\begin{itemize}
+  	%	\setlength\itemsep{1em}
+  	%	\item Coeficientes Mel-Cepstrais
+  	%	\begin{itemize}
+  	%		\item porque é melhor?
+  	%	\end{itemize}
+  	%\end{itemize}
+    
+    \begin{figure}[ht]
+    \centering
+	\includegraphics[width=\textwidth]{mfcc.jpg}
+	\caption{Extração do MFCC}
+	\label{fig:exampleFig1}
+	\end{figure}
+\end{frame}
+
+\section{Experimentos}
+
+
+
+\subsection{Condições Iniciais}
+
+\begin{frame}
+	\frametitle{Condições Iniciais}
+	
+    \begin{itemize}
+    	\setlength\itemsep{1em}
+    	\item Entrada dos classificadores:
+        \begin{itemize}
+    	    \item 15 classes;
+            \item 275370 amostras;
+            \item 39 coeficientes;
+        \end{itemize}
+    	
+        \item Ferramentas Utilizadas:
+        \begin{itemize}
+			\item MATLAB;
+        	\begin{itemize}
+        		\item toolbox Neural Network;
+        		\item toolbox SVM;
+        	\end{itemize}
+        	\item Voicebox;
+		\end{itemize}
 	\end{itemize}
 \end{frame}
+
+
+
 
 \subsection{Métodos Utilizados}
 
-\begin{frame}
-
-	\frametitle{K-Means 1 (intro) \textbf{EU NAO SEI O NOME DO ALGORITMO QUE A MARILIA USA}}
-	
-	\begin{itemize}	
-		\item introdução bonitinha aqui
-	\end{itemize}
-	
-\end{frame}
-
 
 \begin{frame}
 
-	\frametitle{K-Means 2 (especificações) \textbf{EU NAO SEI O NOME DO ALGORITMO QUE A MARILIA USA}}
+	\frametitle{QV LGB (intro)}
 	
 	\begin{itemize}	
 		\item detalhes das especificações aqui
@@ -282,18 +359,56 @@ Instituto Militar de Engenharia \\
 
 \begin{frame}
 
-	\frametitle{K-Means 3 (resultados) \textbf{EU NAO SEI O NOME DO ALGORITMO QUE A MARILIA USA}}
+	\frametitle{QV LGB (resultados)}
 	
-	\begin{itemize}	
-		\item aquele tabelão maroto
-	\end{itemize}
+	\begin{table}[h]
+\centering
+\caption{Matriz de Confusão da classificação usando QVLGB}
+\label{tab:confusion_qvlgb}
+\resizebox{\textwidth}{!}{\begin{tabular}{l||l|l|l|l|l|l|l|l|l|l|l|l|l|l|l}
+\hline
+& Babble & Bucc 1 & Bucc 2 & Dest Eng & Dest Ops & F16 & Fac 1 & Fac 2 & HFChn & Leop & M109 & MachGun & Pink & Volvo & White \\
+\hline
+\hline
+Babble & 6,5\% & & & & & & 0,1\% & 0,1\% & & & & & & & \\
+\hline
+Buccaneer 1 & &6,6\% & & & & & & & & & & & & & \\
+\hline
+Buccaneer 2  & & & 6,7\% & & & & & & & & & & & & \\
+\hline
+Destroyer Engine  & & & & 6,6\% & & & & & & & & & & & \\
+\hline
+Destroyer Ops & & & & & 6,5\%& & & & & & & & & & \\
+\hline
+F16 & & & & & & 6,6\% & & & & & & & & & \\
+\hline
+Factory 1 & & & & & & & 6,0\% &0,2\% & & & & & 0,1\% & & \\
+\hline
+Factory 2 & & & & & & & 0,3\%& 6,4\% & & & & & & & \\
+\hline
+HF Channel & & & & & & & & & 6,7\% & & & & & & \\
+\hline
+Leopard & & & & & & & & & &6,6\% & & & & & \\
+\hline
+M109 & & & & & & & & & & &6,6\% & & & & \\
+\hline
+Machine Gun & & & & & & & & & & & &6,6\% & & & \\
+\hline
+Pink & & & & & & & 0,2\% & & & & & &6,6\% & & \\
+\hline
+Volvo & & & & & & & & & & & & & &6,6\% & \\
+\hline
+White & & & & & & & & & & & & & & & 6,7\%\\
+\hline
+\end{tabular}}
+\end{table}
 	
 \end{frame}
 
 
 \begin{frame}
 
-	\frametitle{Gaussian Mixture Model 1 (intro)}
+	\frametitle{Gaussian Mixture Model (intro)}
 	
 	\begin{itemize}	
 		\item introdução bonitinha aqui
@@ -302,31 +417,61 @@ Instituto Militar de Engenharia \\
 \end{frame}
 
 
+
+
+
 \begin{frame}
 
-	\frametitle{Gaussian Mixture Model 2 (especificações)}
+	\frametitle{Gaussian Mixture Model (resultados)}
 	
-	\begin{itemize}	
-		\item detalhes das especificações aqui
-	\end{itemize}
+	\begin{table}[h]
+\centering
+\caption{Matriz de Confusão da classificação usando GMM}
+\label{tab:confusion_gmm}
+\resizebox{\textwidth}{!}{\begin{tabular}{l||l|l|l|l|l|l|l|l|l|l|l|l|l|l|l}
+\hline
+& Babble & Bucc 1 & Bucc 2 & Dest Eng & Dest Ops & F16 & Fac 1 & Fac 2 & HFChn & Leop & M109 & MachGun & Pink & Volvo & White \\
+\hline
+\hline
+Babble & 6,5\% & & & & & & 0,1\% & 0,1\% & & & & & & & \\
+\hline
+Buccaneer 1 & &6,6\% & & & & & & & & & & & & & \\
+\hline
+Buccaneer 2  & & & 6,7\% & & & & & & & & & & & & \\
+\hline
+Destroyer Engine  & & & & 6,6\% & & & & & & & & & & & \\
+\hline
+Destroyer Ops & & & & & 6,5\%& & & & & & & & & & \\
+\hline
+F16 & & & & & & 6,6\% & & & & & & & & & \\
+\hline
+Factory 1 & & & & & & & 6,0\% &0,2\% & & & & & 0,1\% & & \\
+\hline
+Factory 2 & & & & & & & 0,3\%& 6,4\% & & & & & & & \\
+\hline
+HF Channel & & & & & & & & & 6,7\% & & & & & & \\
+\hline
+Leopard & & & & & & & & & &6,6\% & & & & & \\
+\hline
+M109 & & & & & & & & & & &6,6\% & & & & \\
+\hline
+Machine Gun & & & & & & & & & & & &6,6\% & & & \\
+\hline
+Pink & & & & & & & 0,2\% & & & & & &6,6\% & & \\
+\hline
+Volvo & & & & & & & & & & & & & &6,6\% & \\
+\hline
+White & & & & & & & & & & & & & & & 6,7\%\\
+\hline
+\end{tabular}}
+\end{table}
 	
 \end{frame}
 
 
 \begin{frame}
 
-	\frametitle{Gaussian Mixture Model 3 (resultados)}
-	
-	\begin{itemize}	
-		\item aquele tabelão maroto
-	\end{itemize}
-	
-\end{frame}
-
-
-\begin{frame}
-
-	\frametitle{Neural Network 1 (intro)}
+	\frametitle{Neural Network  (intro)}
 	
 	\begin{itemize}	
 		\item introdução bonitinha aqui
@@ -335,31 +480,61 @@ Instituto Militar de Engenharia \\
 \end{frame}
 
 
+
+
+
 \begin{frame}
 
-	\frametitle{Neural Network 2 (especificações)}
+	\frametitle{Neural Network (resultados)}
 	
-	\begin{itemize}	
-		\item detalhes das especificações aqui
-	\end{itemize}
+	\begin{table}[h]
+\centering
+\caption{Matriz de Confusão da classificação usando Neural Network}
+\label{tab:confusion_nn}
+\resizebox{\textwidth}{!}{\begin{tabular}{l||l|l|l|l|l|l|l|l|l|l|l|l|l|l|l}
+\hline
+& Babble & Bucc 1 & Bucc 2 & Dest Eng & Dest Ops & F16 & Fac 1 & Fac 2 & HFChn & Leop & M109 & MachGun & Pink & Volvo & White \\
+\hline
+\hline
+Babble & 6,5\% & & & & & & 0,1\% & 0,1\% & & & & & & & \\
+\hline
+Buccaneer 1 & &6,6\% & & & & & & & & & & & & & \\
+\hline
+Buccaneer 2  & & & 6,7\% & & & & & & & & & & & & \\
+\hline
+Destroyer Engine  & & & & 6,6\% & & & & & & & & & & & \\
+\hline
+Destroyer Ops & & & & & 6,5\%& & & & & & & & & & \\
+\hline
+F16 & & & & & & 6,6\% & & & & & & & & & \\
+\hline
+Factory 1 & & & & & & & 6,0\% &0,2\% & & & & & 0,1\% & & \\
+\hline
+Factory 2 & & & & & & & 0,3\%& 6,4\% & & & & & & & \\
+\hline
+HF Channel & & & & & & & & & 6,7\% & & & & & & \\
+\hline
+Leopard & & & & & & & & & &6,6\% & & & & & \\
+\hline
+M109 & & & & & & & & & & &6,6\% & & & & \\
+\hline
+Machine Gun & & & & & & & & & & & &6,6\% & & & \\
+\hline
+Pink & & & & & & & 0,2\% & & & & & &6,6\% & & \\
+\hline
+Volvo & & & & & & & & & & & & & &6,6\% & \\
+\hline
+White & & & & & & & & & & & & & & & 6,7\%\\
+\hline
+\end{tabular}}
+\end{table}
 	
 \end{frame}
 
 
 \begin{frame}
 
-	\frametitle{Neural Network 3 (resultados)}
-	
-	\begin{itemize}	
-		\item aquele tabelão maroto
-	\end{itemize}
-	
-\end{frame}
-
-
-\begin{frame}
-
-	\frametitle{Support Vector Machines 1 (intro)}
+	\frametitle{Support Vector Machines (intro)}
 	
 	\begin{itemize}	
 		\item introdução bonitinha aqui
@@ -368,24 +543,54 @@ Instituto Militar de Engenharia \\
 \end{frame}
 
 
-\begin{frame}
 
-	\frametitle{Support Vector Machines 2 (especificações)}
-	
-	\begin{itemize}	
-		\item detalhes das especificações aqui
-	\end{itemize}
-	
-\end{frame}
 
 
 \begin{frame}
 
-	\frametitle{Support Vector Machines 3 (resultados)}
+	\frametitle{Support Vector Machines  (resultados)}
 	
-	\begin{itemize}	
-		\item aquele tabelão maroto
-	\end{itemize}
+	\begin{table}[h]
+\centering
+\caption{Matriz de Confusão da classificação usando SVM}
+\label{tab:confusion_svm}
+\resizebox{\textwidth}{!}{\begin{tabular}{l||l|l|l|l|l|l|l|l|l|l|l|l|l|l|l}
+\hline
+& Babble & Bucc 1 & Bucc 2 & Dest Eng & Dest Ops & F16 & Fac 1 & Fac 2 & HFChn & Leop & M109 & MachGun & Pink & Volvo & White \\
+\hline
+\hline
+Babble & 6,5\% & & & & & & 0,1\% & 0,1\% & & & & & & & \\
+\hline
+Buccaneer 1 & &6,6\% & & & & & & & & & & & & & \\
+\hline
+Buccaneer 2  & & & 6,7\% & & & & & & & & & & & & \\
+\hline
+Destroyer Engine  & & & & 6,6\% & & & & & & & & & & & \\
+\hline
+Destroyer Ops & & & & & 6,5\%& & & & & & & & & & \\
+\hline
+F16 & & & & & & 6,6\% & & & & & & & & & \\
+\hline
+Factory 1 & & & & & & & 6,0\% &0,2\% & & & & & 0,1\% & & \\
+\hline
+Factory 2 & & & & & & & 0,3\%& 6,4\% & & & & & & & \\
+\hline
+HF Channel & & & & & & & & & 6,7\% & & & & & & \\
+\hline
+Leopard & & & & & & & & & &6,6\% & & & & & \\
+\hline
+M109 & & & & & & & & & & &6,6\% & & & & \\
+\hline
+Machine Gun & & & & & & & & & & & &6,6\% & & & \\
+\hline
+Pink & & & & & & & 0,2\% & & & & & &6,6\% & & \\
+\hline
+Volvo & & & & & & & & & & & & & &6,6\% & \\
+\hline
+White & & & & & & & & & & & & & & & 6,7\%\\
+\hline
+\end{tabular}}
+\end{table}
 	
 \end{frame}
 
@@ -393,9 +598,34 @@ Instituto Militar de Engenharia \\
 
 	\frametitle{Comparação}
 	
-	\begin{itemize}	
-		\item Tabela com a comparação entre os modelos.
-	\end{itemize}
+	\begin{table}[ht]
+\centering
+\caption{Accuracy per class for the methods compared.}
+\label{tab:acc}
+\resizebox{.7\textwidth}{!}{\begin{tabular}{l|llll}
+\hline
+Class & QV LGB & GMM & Neural Network & SVM \\
+\hline
+Babble & 88,2\% & 98,9\% & 97,5\% &  \\
+Bucanneer 1 & 96,6\% & 99,1\% & 99,1\% & \\
+Bucanneer 2 & 98,8\% & 99,7\% & 99,8\% & \\
+Destroyer Engine & 99,8\% & 99,7\% & 99,7\% & \\
+Destroyer Ops & 90,8\% & 96,9\% & 98,3\% &\\
+F16 & 95,2\% & 99,10\% & 97,6\% &\\
+Factory 1 & 59,3\% & 87,6\% & 92,3\% &\\
+Factory 2 & 93,9\% & 95,0\% & 94,7\% &\\
+HF Channel & 100,0\% & 100,0\% & 99,9\% &\\
+Leopard & 99,1\% & 99,6\% & 99,4\% &\\
+M109 & 94,1\% & 99,3\% & 99,3\% &\\
+Machine Gun & 7,1\% & 99,5\% & 99,5\% &\\
+Pink & 99,7\% & 98,0\% & 96,9\% &\\
+Volvo & 90,8\% & 99,4\% & 99,7\% &\\
+White & 99,9\% & 99,9\% & 100,0\% &\\
+\hline
+\textbf{OVERALL} & 89,2\% & 98,0\% & 98,4\% & \\
+\hline
+\end{tabular}}
+\end{table}
 	
 \end{frame}
 
@@ -422,8 +652,10 @@ Instituto Militar de Engenharia \\
 	\begin{itemize}
 		\setlength\itemsep{1em}
 		
-		\item Extender a comparação a outros métodos de classificação.
-		\item Investigar desempenho de comitê de classificação.
+		\item Estender a comparação a outros métodos de classificação;
+        \item Aumentar a diversidade da base de dados;
+		\item Investigar desempenho de comitê de classificação;
+        \item Investigar técnicas de Deep Learning.
 	
 	\end{itemize}
 
@@ -438,7 +670,7 @@ Instituto Militar de Engenharia \\
     
     \begin{itemize}
     	\setlength\itemsep{2em}
-		\item Valeu galera!
+		\item Obrigado pela atenção!
 	\end{itemize}
 
 \end{frame}
