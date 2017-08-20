@@ -1,0 +1,12 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {brazil}
+\beamer@sectionintoc {2}{Introdu\IeC {\c c}\IeC {\~a}o}{3}{0}{1}
+\beamer@subsectionintoc {2}{1}{Processamento de Sinais Ac\IeC {\'u}sticos em Ru\IeC {\'\i }do}{3}{0}{1}
+\beamer@subsectionintoc {2}{2}{Objetivos}{5}{0}{1}
+\beamer@sectionintoc {3}{T\IeC {\'e}cnicas Utilizadas}{7}{0}{2}
+\beamer@subsectionintoc {3}{1}{Valida\IeC {\c c}\IeC {\~a}o Cruzada}{8}{0}{2}
+\beamer@subsectionintoc {3}{2}{Extra\IeC {\c c}\IeC {\~a}o de Atributos do \IeC {\'A}udio}{9}{0}{2}
+\beamer@sectionintoc {4}{Experimentos}{10}{0}{3}
+\beamer@subsectionintoc {4}{1}{Condi\IeC {\c c}\IeC {\~o}es Iniciais}{10}{0}{3}
+\beamer@subsectionintoc {4}{2}{M\IeC {\'e}todos Utilizados}{11}{0}{3}
+\beamer@sectionintoc {5}{Considera\IeC {\c c}\IeC {\~o}es Finais}{20}{0}{4}
