@@ -30,7 +30,7 @@
 
 %This is the paper model for SBC conferences. I made some instructions so we can use it to write our own paper. It contains a suggestion of placement of the sections. 
 
-Noise is one of the main problems affecting the performance of most acoustic signal processing tasks. Thus, understanding and analyzing noise is fundamental to pursue better results. One of the paths in this better understanding is the automatic classification of noise. In this work we compare four classification methods widely researched in the literature in the task of noise classification. This classification was performed in the NOISEX database and the methods chosen to be compared were the K-means, Gaussian Mixture Model, Support Vector Machines and Neural Network. Results show that the SVM performs the classification better than the other methods studied.
+Noise is one of the main problems affecting the performance of most acoustic signal processing tasks. Thus, understanding and analyzing noise is fundamental to pursue better results. One of the paths in this better understanding is the automatic classification of noise. In this work we compare four classification methods widely researched in the literature in the task of noise classification. This classification was performed in the NOISEX database and the methods chosen to be compared were the VQ LBG, Gaussian Mixture Model, Support Vector Machines and Neural Network. Results show that the SVM performs the classification better than the other methods studied.
 
 \end{abstract}
      
@@ -47,7 +47,7 @@ Many Acoustic Signal Processing (ASP) tasks are performed in noisy conditions. T
 
 There is extensive previous work in the field of audio classification. There is great variety in the methods used to perform this task, such as statistical methods \cite{dal1988acoustic,peltonen2002computational}, methods using stochastical knowledge such as \textit{Hidden Markov Models} (HMM) \cite{ma2003context}, using neural networks \cite{beritelli2005adaptive} and support vector machines \cite{cumani2012analysis}. There is variety also in the applications sought, such as speaker recognition \cite{kinnunen2010overview,murty2006combining,farrell1994speaker}, acoustic scene recognition \cite{piczak2015environmental,barchiesi2015acoustic} or animal species recognition \cite{somervuo2006parametric,lee2008automatic}. The noise classification is different only in application, but can be performed using any method used for audio classification \cite{beritelli2007adaptive,ma2006acoustic}.
 
-This work proposes to evaluate the performance of four common methods used in audio classification in the specific task of classify noise. To this end, we implement those methods in the same set of audio files containing different types of noise. These files are taken from the NOISEX database \cite{varga1993assessment}, a database comprised of audios of 15 types of noise. The evaluation follows these steps: The extraction of attributes of each audio file, construction of the models according to each method, classification and evaluation of the results. The methods compared are the Neural Network, Gaussian Mixture Model, Support Vector Machines and K-means.
+This work proposes to evaluate the performance of four common methods used in audio classification in the specific task of classify noise. To this end, we implement those methods in the same set of audio files containing different types of noise. These files are taken from the NOISEX database \cite{varga1993assessment}, a database comprised of audios of 15 types of noise. The evaluation follows these steps: The extraction of attributes of each audio file, construction of the models according to each method, classification and evaluation of the results. The methods compared are the Neural Network, Gaussian Mixture Model, Support Vector Machines and VQ LBG.
 
 The remainder of this paper is organized as follows. Section \ref{class} introduces the task of noise classification, as long as the methods used in this paper. Section \ref{exp} describes the experiments performed and the results obtained and, finally, in Section \ref{conc} we present our conclusions about the results found, as long as the future works.
 
@@ -154,7 +154,7 @@ This section will describe our experiments. They follow these steps: First we di
 
 %This paragraph should have all the requirements to perform the experiment, including hardware, software and general conditions. Sometimes people put the database here, but i think it will provide greater value if we put it in it's own subsection.
 
-The experiments were performed using MATLAB, using the Neural Network toolbox and the SVM toolbox. They were performed in two separated computers. The K-means and GMM experiments were performed with an Intel-i7 1,8GHz processor, with ram memory of 8GB and Windows10 OS. The Neural Network and SVM experiments were performed with an an Intel-i3 processor, with ram memory of 4GB and Linux OS.
+The experiments were performed using MATLAB, using the Neural Network toolbox and the SVM toolbox. They were performed in two separated computers. The VQ LBG and GMM experiments were performed with an Intel-i7 1,8GHz processor, with ram memory of 8GB and Windows10 OS. The Neural Network and SVM experiments were performed with an an Intel-i3 processor, with ram memory of 4GB and Linux OS.
 
 \subsection{Database Description} \label{exp:data}
 
@@ -185,9 +185,9 @@ The 4-fold cross-validation was performed. The accuracy reported in Table \ref{t
 
 In this section we present and analyze the results obtained in the experiments. The accuracy of the classifiers is presented in Table \ref{tab:acc}, overall and divided by class.
 
-The first thing to be noted is that the best result is obtained by the SVM classifier, followed closely by the overall accuracy of the Neural Network and the GMM classifiers. The k-means classifier is almost 10\% less accurate than the other three.
+The first thing to be noted is that the best result is obtained by the SVM classifier, followed closely by the overall accuracy of the Neural Network and the GMM classifiers. The VQ LBG classifier is almost 10\% less accurate than the other three.
 
-The most accurate classes are 'white' and 'hf channel' and the result for 'machine gun' in the k-means classifier is inexplicably low.
+The most accurate classes are 'white' and 'hf channel' and the result for 'machine gun' in the VQ LBG classifier is inexplicably low.
 
 \begin{table}[ht]
 \centering
@@ -218,11 +218,11 @@ White Noise & 99,9\% & 99,9\% & 100,0\% & 100,0\% \\
 \end{tabular}
 \end{table}
 
-The confusion matrices for each method are shown in Tables \ref{tab:confusion_kmeans}, \ref{tab:confusion_gmm}, \ref{tab:confusion_svm} and \ref{tab:confusion_nn}, in the Appendix \ref{extra}.
+The confusion matrices for each method are shown in Tables \ref{tab:confusion_vqlbg}, \ref{tab:confusion_gmm}, \ref{tab:confusion_svm} and \ref{tab:confusion_nn}, in the Appendix \ref{extra}.
 
 \section{Conclusions} \label{conc}
 
-In this work, we aimed to compare four classification methods widely known in the literature. For this, we did the classification in NOISEX, a known noise database. Three of the four methods performed above 95\%, ensuring noise classification is feasible as part of enhancement techniques for acoustic signal processing tasks. The inconsistencies of the performance as well as the poorer result renders the k-means method the less suitable of the ones studied in this work.
+In this work, we aimed to compare four classification methods widely known in the literature. For this, we did the classification in NOISEX, a known noise database. Three of the four methods performed above 95\%, ensuring noise classification is feasible as part of enhancement techniques for acoustic signal processing tasks. The inconsistencies of the performance as well as the poorer result renders the VQ LBG method the less suitable of the ones studied in this work.
 
 One of the problems of the methods is the computation demand. Two of the methods originally studied were discarded because of the computation demand. Another shortcoming of the methods is the need of training, which is time consuming and demands a large training data set.
 
@@ -277,8 +277,8 @@ Some possible future paths for this work are listed below:
 
 \begin{table}[ht]
 \centering
-\caption{Confusion Matrix for the K-means classifier}
-\label{tab:confusion_kmeans}
+\caption{Confusion Matrix for the VQ LBG classifier}
+\label{tab:confusion_vqlbg}
 \resizebox{\textwidth}{!}{\begin{tabular}{l||l|l|l|l|l|l|l|l|l|l|l|l|l|l|l}
 \hline
 & Babble & Bucc 1 & Bucc 2 & Dest Eng & Dest Ops & F16 & Fac 1 & Fac 2 & HFChn & Leop & M109 & MachGun & Pink & Volvo & White \\
