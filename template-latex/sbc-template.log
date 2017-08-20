@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.11.4)  20 AUG 2017 19:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.11.4)  20 AUG 2017 20:27
 entering extended mode
 **./sbc-template.tex
 (sbc-template.tex
@@ -304,6 +304,18 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 Underfull \vbox (badness 1097) has occurred while \output is active []
 
  [7])
+<conf_qvlbg.png, id=38, 1171.37625pt x 290.08376pt>
+File: conf_qvlbg.png Graphic file (type png)
+ <use conf_qvlbg.png>
+Package pdftex.def Info: conf_qvlbg.png used on input line 282.
+(pdftex.def)             Requested size: 426.79135pt x 105.69156pt.
+
+<conf_gmm.png, id=40, 1161.33875pt x 288.07625pt>
+File: conf_gmm.png Graphic file (type png)
+ <use conf_gmm.png>
+Package pdftex.def Info: conf_gmm.png used on input line 289.
+(pdftex.def)             Requested size: 426.79135pt x 105.86565pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -313,31 +325,31 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8] [9] (sbc-template.aux) ) 
+[8 <./conf_qvlbg.png>] [9 <./conf_gmm.png>] (sbc-template.aux) ) 
 Here is how much of TeX's memory you used:
- 2776 strings out of 493334
- 39350 string characters out of 3139234
- 182591 words of memory out of 3000000
- 6252 multiletter control sequences out of 15000+200000
+ 2787 strings out of 493334
+ 39522 string characters out of 3139234
+ 149591 words of memory out of 3000000
+ 6260 multiletter control sequences out of 15000+200000
  21033 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,8n,28p,946b,319s stack positions out of 5000i,500n,10000p,200000b,50000s
-{D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8
-r.enc}<D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><D
-:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Program Files/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmsy8.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/uc
-rr8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><D:/P
-rogram Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/Program Files/MiKT
-eX 2.9/fonts/type1/urw/times/utmbi8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/typ
-e1/urw/times/utmr8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr
-i8a.pfb>
-Output written on sbc-template.pdf (9 pages, 227528 bytes).
+{D:/Program Fil
+es/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<D:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmex10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmmi12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmmi8.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><D
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Program Files/M
+iKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><D:/Program Files/MiKTeX 2.9/fonts
+/type1/urw/helvetic/uhvb8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/tim
+es/utmb8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><D
+:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/Program Files/M
+iKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on sbc-template.pdf (9 pages, 341897 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
+ 91 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
