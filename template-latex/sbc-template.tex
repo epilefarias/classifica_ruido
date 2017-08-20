@@ -53,9 +53,6 @@ The remainder of this paper is organized as follows. Section \ref{class} introdu
 
 \section{Noise Classification} \label{class}
 
-%In this section we should describe the audio classification task and how it applies to our specific problem, the noise classification.
-
-%Additionally, we have to describe each method we use, in subsections.
 
 \subsection{Extraction of Audio Attributes} \label{class:audioatt}
 
@@ -142,7 +139,14 @@ In this work we used a network with 50 neurons.%50 NEURONS UTILIZADOS
 
 \section{Experiments} \label{exp}
 
-%Here we will describe the experiments. It should contain an introductory paragraph containing the purpose of the experiments.
+This section will describe our experiments. They follow these steps: First we divide the dataset in train and test data. After that we divide the audio files in samples of 20ms, overlapping 50\%. Than we extract the MFCC of those samples. In the training phase, the MFCC of the training data are used to build models based on the methods described in Section \ref{class:meth}. In the test phase, we classify the data using those models. This procedure is outlined in Figure \ref{fig:exp}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{diagrama_artigo.jpg}
+\caption{Outline of the experiments.}
+\label{fig:exp}
+\end{figure}
 
 \subsection{Experimental Setup} \label{exp:setup}
 
