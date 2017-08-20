@@ -88,7 +88,7 @@ In this work, we used $K = 13$, and the $\delta_n = c_n - c_{n-1}$ and $\delta\d
 
 \subsection{Classification Methods} \label{class:meth}
 
-\subsubsection{Vector Quantization LGB} \label{class:qvlgb}
+\subsubsection{Vector Quantization LBG} \label{class:qvlbg}
 
 This is a quantization (summarization) method based on k-means. It's commonly used in data compression \cite{kekre2008speech}. One of the most famous implementations of this method is the LBG algorithm \cite{linde1980algorithm}. 
 
@@ -128,7 +128,7 @@ There are two distinct phases: in the training phase, the algorithm estimates th
 The experiments shown in Section \ref{exp} were performed using the quadratic kernel.% was used KERNEL QUADRATICO UTILIZADO
 
 
-\subsubsection{Neural Network} \label{class:nn}
+\subsubsection{Neural Network (NN)} \label{class:nn}
 
 %One or two paragraphs should do. Don't forget the proper references (like this one \cite{lei2014novel}).
 
@@ -195,25 +195,25 @@ The most accurate classes are 'white' and 'hf channel' and the result for 'machi
 \label{tab:acc}
 \begin{tabular}{l|llll}
 \hline
-Class & K-means & GMM & Neural Network & SVM \\
+Class & VQ-LBG & GMM & NN & SVM \\
 \hline
-Babble & 88,2\% & 98,9\% & 97,5\% &  \\
-Bucanneer 1 & 96,6\% & 99,1\% & 99,1\% & \\
-Bucanneer 2 & 98,8\% & 99,7\% & 99,8\% & \\
-Destroyer Engine & 99,8\% & 99,7\% & 99,7\% & \\
-Destroyer Ops & 90,8\% & 96,9\% & 98,3\% & \\
-F16 & 95,2\% & 99,1\% & 97,6\% & \\
-Factory 1 & 59,3\% & 87,6\% & 92,3\% & \\
-Factory 2 & 93,9\% & 95,0\% & 94,7\% & \\
-HF Channel & 100,0\% & 100,0\% & 99,9\% & \\
-Leopard & 99,1\% & 99,6\% & 99,4\% & \\
-M109 & 94,1\% & 99,3\% & 99,3\% & \\
-Machine Gun & 7,1\% & 99,5\% & 99,5\% & \\
-Pink Noise & 99,7\% & 98,0\% & 96,9\% & \\
-Volvo & 90,8\% & 99,4\% & 99,7\% & \\
-White Noise & 99,9\% & 99,9\% & 100,0\% & \\
+Babble & 88,2\% & 98,9\% & 97,5\% & 99,4\%  \\
+Bucanneer 1 & 96,6\% & 99,1\% & 99,1\% & 99,7\% \\
+Bucanneer 2 & 98,8\% & 99,7\% & 99,8\% & 99,9\% \\
+Destroyer Engine & 99,8\% & 99,7\% & 99,7\% & 99,9\% \\
+Destroyer Ops & 90,8\% & 96,9\% & 98,3\% & 99,5\% \\
+F16 & 95,2\% & 99,1\% & 97,6\% & 99,8\%\\
+Factory 1 & 59,3\% & 87,6\% & 92,3\% & 93,8\% \\
+Factory 2 & 93,9\% & 95,0\% & 94,7\% & 94,7\%\\
+HF Channel & 100,0\% & 100,0\% & 99,9\% & 100,0\%\\
+Leopard & 99,1\% & 99,6\% & 99,4\% & 99,7\% \\
+M109 & 94,1\% & 99,3\% & 99,3\% & 99,6\% \\
+Machine Gun & 7,1\% & 99,5\% & 99,5\% & 99,9\% \\
+Pink Noise & 99,7\% & 98,0\% & 96,9\% & 97,8\% \\
+Volvo & 90,8\% & 99,4\% & 99,7\% & 99,9\% \\
+White Noise & 99,9\% & 99,9\% & 100,0\% & 100,0\% \\
 \hline
-\textbf{OVERALL} & 89,2\% & 98,0\% & 98,4\% & \\
+\textbf{OVERALL} & 89,2\% & 98,0\% & 98,4\% & 99,7\% \\
 \hline
 \end{tabular}
 \end{table}
@@ -222,7 +222,9 @@ The confusion matrices for each method are shown in Tables \ref{tab:confusion_km
 
 \section{Conclusions} \label{conc}
 
-In this work, we aimed to compare four classification methods widely known in the literature. For this, we did the classification in NOISEX, a known noise database. Three of the four methods performed above 95\%, ensuring noise classification is feasible as part of enhancement techniques for acoustic signal processing tasks. The inconsistencies of the performance as well as the poorer result renders the k-means method the less suitable of the ones studied in this work. Another shortcoming of the methods is the need of training, which is time consuming and demands a large training data set.
+In this work, we aimed to compare four classification methods widely known in the literature. For this, we did the classification in NOISEX, a known noise database. Three of the four methods performed above 95\%, ensuring noise classification is feasible as part of enhancement techniques for acoustic signal processing tasks. The inconsistencies of the performance as well as the poorer result renders the k-means method the less suitable of the ones studied in this work.
+
+One of the problems of the methods is the computation demand. Two of the methods originally studied were discarded because of the computation demand. Another shortcoming of the methods is the need of training, which is time consuming and demands a large training data set.
 
 \subsection{Future Works}
 
@@ -231,6 +233,7 @@ Some possible future paths for this work are listed below:
 \begin{itemize}
 	\item Explore Deep Learning techniques. The experiments performed in this work depend on pre-processing the audio data before doing the classification. Deep learning techniques can use the raw data to classify, thus eliminating this step. 
 	\item Expand the dataset. This work focused on a well known database, but it would be more representative to use them in more extensive data, or noise mixed with clean audio, which is the usual in Audio Signal Processing tasks;
+	\item Investigate the construction of a classification committee. Since the results of the studied methods are interesting, it is possible that combine them in a decision committee will yield even better results.
 	\item Explore the state-of-the-art classification methods. This work focused in methods widely used and known in audio classification. There are evolutions of these methods that yield better results than the ones pictured here in other applications of audio classification, and may yield better results in this specific task.
 \end{itemize}
 
