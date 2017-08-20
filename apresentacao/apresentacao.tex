@@ -368,54 +368,19 @@ Instituto Militar de Engenharia \\
 	
 \end{frame}
 
-
 \begin{frame}
 
 	\frametitle{QV LBG (resultados)}
 	
 	\begin{table}[h]
-\centering
-\caption{Matriz de Confusão da classificação usando QV LBG}
-\label{tab:confusion_qvlbg}
-\resizebox{\textwidth}{!}{\begin{tabular}{l||l|l|l|l|l|l|l|l|l|l|l|l|l|l|l}
-\hline
-& Babble & Bucc 1 & Bucc 2 & Dest Eng & Dest Ops & F16 & Fac 1 & Fac 2 & HFChn & Leop & M109 & MachGun & Pink & Volvo & White \\
-\hline
-\hline
-Babble & 6,5\% & & & & & & 0,1\% & 0,1\% & & & & & & & \\
-\hline
-Buccaneer 1 & &6,6\% & & & & & & & & & & & & & \\
-\hline
-Buccaneer 2  & & & 6,7\% & & & & & & & & & & & & \\
-\hline
-Destroyer Engine  & & & & 6,6\% & & & & & & & & & & & \\
-\hline
-Destroyer Ops & & & & & 6,5\%& & & & & & & & & & \\
-\hline
-F16 & & & & & & 6,6\% & & & & & & & & & \\
-\hline
-Factory 1 & & & & & & & 6,0\% &0,2\% & & & & & 0,1\% & & \\
-\hline
-Factory 2 & & & & & & & 0,3\%& 6,4\% & & & & & & & \\
-\hline
-HF Channel & & & & & & & & & 6,7\% & & & & & & \\
-\hline
-Leopard & & & & & & & & & &6,6\% & & & & & \\
-\hline
-M109 & & & & & & & & & & &6,6\% & & & & \\
-\hline
-Machine Gun & & & & & & & & & & & &6,6\% & & & \\
-\hline
-Pink & & & & & & & 0,2\% & & & & & &6,6\% & & \\
-\hline
-Volvo & & & & & & & & & & & & & &6,6\% & \\
-\hline
-White & & & & & & & & & & & & & & & 6,7\%\\
-\hline
-\end{tabular}}
-\end{table}
+		\centering
+		\caption{Matriz de confusão do classificador QV LBG}
+		\label{tab:confusion_vqlbg}
+		\includegraphics[width=\textwidth]{conf_qvlbg.png}
+	\end{table}	
 	
 \end{frame}
+
 
 
 \begin{frame}
@@ -440,129 +405,71 @@ White & & & & & & & & & & & & & & & 6,7\%\\
 	
 \end{frame}
 
-
-
-
-
 \begin{frame}
 
 	\frametitle{Gaussian Mixture Model (resultados)}
 	
 	\begin{table}[h]
-\centering
-\caption{Matriz de Confusão da classificação usando GMM}
-\label{tab:confusion_gmm}
-\resizebox{\textwidth}{!}{\begin{tabular}{l||l|l|l|l|l|l|l|l|l|l|l|l|l|l|l}
-\hline
-& Babble & Bucc 1 & Bucc 2 & Dest Eng & Dest Ops & F16 & Fac 1 & Fac 2 & HFChn & Leop & M109 & MachGun & Pink & Volvo & White \\
-\hline
-\hline
-Babble & 6,5\% & & & & & & 0,1\% & 0,1\% & & & & & & & \\
-\hline
-Buccaneer 1 & &6,6\% & & & & & & & & & & & & & \\
-\hline
-Buccaneer 2  & & & 6,7\% & & & & & & & & & & & & \\
-\hline
-Destroyer Engine  & & & & 6,6\% & & & & & & & & & & & \\
-\hline
-Destroyer Ops & & & & & 6,5\%& & & & & & & & & & \\
-\hline
-F16 & & & & & & 6,6\% & & & & & & & & & \\
-\hline
-Factory 1 & & & & & & & 6,0\% &0,2\% & & & & & 0,1\% & & \\
-\hline
-Factory 2 & & & & & & & 0,3\%& 6,4\% & & & & & & & \\
-\hline
-HF Channel & & & & & & & & & 6,7\% & & & & & & \\
-\hline
-Leopard & & & & & & & & & &6,6\% & & & & & \\
-\hline
-M109 & & & & & & & & & & &6,6\% & & & & \\
-\hline
-Machine Gun & & & & & & & & & & & &6,6\% & & & \\
-\hline
-Pink & & & & & & & 0,2\% & & & & & &6,6\% & & \\
-\hline
-Volvo & & & & & & & & & & & & & &6,6\% & \\
-\hline
-White & & & & & & & & & & & & & & & 6,7\%\\
-\hline
-\end{tabular}}
-\end{table}
+		\centering
+		\caption{Matriz de confusão do classificador GMM}
+		\label{tab:confusion_gmm}
+		\includegraphics[width=\textwidth]{conf_gmm.png}
+	\end{table}
 	
 \end{frame}
 
 
-\begin{frame}
-
-	\frametitle{Neural Network  (intro)}
-	
-	\begin{itemize}	
-		\item introdução bonitinha aqui
-	\end{itemize}
-	
-\end{frame}
-
-
-
-
-
-\begin{frame}
-
-	\frametitle{Neural Network (resultados)}
-	
-	\begin{table}[h]
-\centering
-\caption{Matriz de Confusão da classificação usando Neural Network}
-\label{tab:confusion_nn}
-\resizebox{\textwidth}{!}{\begin{tabular}{l||l|l|l|l|l|l|l|l|l|l|l|l|l|l|l}
-\hline
-& Babble & Bucc 1 & Bucc 2 & Dest Eng & Dest Ops & F16 & Fac 1 & Fac 2 & HFChn & Leop & M109 & MachGun & Pink & Volvo & White \\
-\hline
-\hline
-Babble & 6,5\% & & & & & & 0,1\% & 0,1\% & & & & & & & \\
-\hline
-Buccaneer 1 & &6,6\% & & & & & & & & & & & & & \\
-\hline
-Buccaneer 2  & & & 6,7\% & & & & & & & & & & & & \\
-\hline
-Destroyer Engine  & & & & 6,6\% & & & & & & & & & & & \\
-\hline
-Destroyer Ops & & & & & 6,5\%& & & & & & & & & & \\
-\hline
-F16 & & & & & & 6,6\% & & & & & & & & & \\
-\hline
-Factory 1 & & & & & & & 6,0\% &0,2\% & & & & & 0,1\% & & \\
-\hline
-Factory 2 & & & & & & & 0,3\%& 6,4\% & & & & & & & \\
-\hline
-HF Channel & & & & & & & & & 6,7\% & & & & & & \\
-\hline
-Leopard & & & & & & & & & &6,6\% & & & & & \\
-\hline
-M109 & & & & & & & & & & &6,6\% & & & & \\
-\hline
-Machine Gun & & & & & & & & & & & &6,6\% & & & \\
-\hline
-Pink & & & & & & & 0,2\% & & & & & &6,6\% & & \\
-\hline
-Volvo & & & & & & & & & & & & & &6,6\% & \\
-\hline
-White & & & & & & & & & & & & & & & 6,7\%\\
-\hline
-\end{tabular}}
-\end{table}
-	
-\end{frame}
 
 
 \begin{frame}
 
 	\frametitle{Support Vector Machines (intro)}
 	
-	\begin{itemize}	
-		\item introdução bonitinha aqui
-	\end{itemize}
+	\begin{minipage}{.45\textwidth}
+	
+		\begin{itemize}
+			\item texto aqui
+		\end{itemize}
+	
+	\end{minipage}
+	\begin{minipage}{.5\textwidth}
+		\begin{figure}
+			\includegraphics[width=\linewidth]{svm01.png}
+  			\caption{Ilustração do funcionamento de um SVM.}
+  			\label{fig:svm1}
+		\end{figure}
+	\end{minipage}
+	
+\end{frame}
+
+\begin{frame}
+
+	\frametitle{Support Vector Machines  (resultados)}
+	
+
+	
+\end{frame}
+
+
+
+\begin{frame}
+
+	\frametitle{Rede Neural (intro)}
+	
+	\begin{minipage}{.45\textwidth}
+	
+		\begin{itemize}
+			\item texto aqui
+		\end{itemize}
+	
+	\end{minipage}
+	\begin{minipage}{.5\textwidth}
+		\begin{figure}
+			\includegraphics[width=\linewidth]{nn01.png}
+  			\caption{Esquema de funcionamento de uma rede neural.}
+  			\label{fig:nn1}
+		\end{figure}
+	\end{minipage}
 	
 \end{frame}
 
@@ -572,51 +479,12 @@ White & & & & & & & & & & & & & & & 6,7\%\\
 
 \begin{frame}
 
-	\frametitle{Support Vector Machines  (resultados)}
+	\frametitle{Rede Neural (resultados)}
 	
-	\begin{table}[h]
-\centering
-\caption{Matriz de Confusão da classificação usando SVM}
-\label{tab:confusion_svm}
-\resizebox{\textwidth}{!}{\begin{tabular}{l||l|l|l|l|l|l|l|l|l|l|l|l|l|l|l}
-\hline
-& Babble & Bucc 1 & Bucc 2 & Dest Eng & Dest Ops & F16 & Fac 1 & Fac 2 & HFChn & Leop & M109 & MachGun & Pink & Volvo & White \\
-\hline
-\hline
-Babble & 6,5\% & & & & & & 0,1\% & 0,1\% & & & & & & & \\
-\hline
-Buccaneer 1 & &6,6\% & & & & & & & & & & & & & \\
-\hline
-Buccaneer 2  & & & 6,7\% & & & & & & & & & & & & \\
-\hline
-Destroyer Engine  & & & & 6,6\% & & & & & & & & & & & \\
-\hline
-Destroyer Ops & & & & & 6,5\%& & & & & & & & & & \\
-\hline
-F16 & & & & & & 6,6\% & & & & & & & & & \\
-\hline
-Factory 1 & & & & & & & 6,0\% &0,2\% & & & & & 0,1\% & & \\
-\hline
-Factory 2 & & & & & & & 0,3\%& 6,4\% & & & & & & & \\
-\hline
-HF Channel & & & & & & & & & 6,7\% & & & & & & \\
-\hline
-Leopard & & & & & & & & & &6,6\% & & & & & \\
-\hline
-M109 & & & & & & & & & & &6,6\% & & & & \\
-\hline
-Machine Gun & & & & & & & & & & & &6,6\% & & & \\
-\hline
-Pink & & & & & & & 0,2\% & & & & & &6,6\% & & \\
-\hline
-Volvo & & & & & & & & & & & & & &6,6\% & \\
-\hline
-White & & & & & & & & & & & & & & & 6,7\%\\
-\hline
-\end{tabular}}
-\end{table}
+	
 	
 \end{frame}
+
 
 \begin{frame}
 
@@ -624,7 +492,7 @@ White & & & & & & & & & & & & & & & 6,7\%\\
 	
 	\begin{table}[ht]
 \centering
-\caption{Accuracy per class for the methods compared.}
+\caption{Acurácia dos métodos estudados por classe.}
 \label{tab:acc}
 \resizebox{.65\textwidth}{!}{\begin{tabular}{l|llll}
 \hline
@@ -649,7 +517,8 @@ White Noise & 99,9\% & 99,9\% & 100,0\% & 100,0\% \\
 \textbf{OVERALL} & 89,2\% & 98,0\% & 99,5\% & 99,7\% \\
 \hline
 \end{tabular}}
-\end{table}
+\end{table}	
+	
 	
 \end{frame}
 
@@ -667,7 +536,11 @@ White Noise & 99,9\% & 99,9\% & 100,0\% & 100,0\% \\
 			\item Melhor: SVM.
 			\item Pior: QV LBG.
 		\end{itemize}
-		\item 
+		\item Pontos Negativos:
+		\begin{itemize}
+			\item Alta Complexidade Computacional.
+			\item Necessidade de grande base de dados.
+		\end{itemize}
 	\end{itemize}
 
 
