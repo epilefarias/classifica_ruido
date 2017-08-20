@@ -2,7 +2,11 @@
 \beamer@slide {tab:noisex}{7}
 \beamer@slide {fig:diagclass}{8}
 \beamer@slide {fig:exampleFig1}{9}
-\beamer@slide {tab:confusion_qvlgb}{12}
+\beamer@slide {fig:qvlbg1}{11}
+\beamer@slide {fig:qvlbg1}{11}
+\beamer@slide {tab:confusion_qvlbg}{12}
+\beamer@slide {eq:gmm}{13}
+\beamer@slide {fig:gmm1}{13}
 \beamer@slide {tab:confusion_gmm}{14}
 \beamer@slide {tab:confusion_nn}{16}
 \beamer@slide {tab:confusion_svm}{18}
