@@ -59,6 +59,12 @@ Friesen, L.~M., Shannon, R.~V., Baskent, D., and Wang, X. (2001).
 \newblock {\em The Journal of the Acoustical Society of America},
   110(2):1150--1163.
 
+\bibitem[Kekre and Sarode 2008]{kekre2008speech}
+Kekre, H. and Sarode, T.~K. (2008).
+\newblock Speech data compression using vector quantization.
+\newblock {\em WASET International Journal of Computer and Information Science
+  and Engineering (IJCISE)}, 2(4):251--254.
+
 \bibitem[Kinnunen and Li 2010]{kinnunen2010overview}
 Kinnunen, T. and Li, H. (2010).
 \newblock An overview of text-independent speaker recognition: From features to
@@ -76,6 +82,11 @@ Lee, C.-H., Han, C.-C., and Chuang, C.-C. (2008).
 Li, D., Sethi, I.~K., Dimitrova, N., and McGee, T. (2001).
 \newblock Classification of general audio data for content-based retrieval.
 \newblock {\em Pattern recognition letters}, 22(5):533--544.
+
+\bibitem[Linde et~al. 1980]{linde1980algorithm}
+Linde, Y., Buzo, A., and Gray, R. (1980).
+\newblock An algorithm for vector quantizer design.
+\newblock {\em IEEE Transactions on communications}, 28(1):84--95.
 
 \bibitem[Ma et~al. 2006]{ma2006acoustic}
 Ma, L., Milner, B., and Smith, D. (2006).

@@ -88,9 +88,11 @@ In this work, we used $K = 13$, and the $\delta_n = c_n - c_{n-1}$ and $\delta\d
 
 \subsection{Classification Methods} \label{class:meth}
 
-\subsubsection{K-means} \label{class:kmeans}
+\subsubsection{Vector Quantization LGB} \label{class:qvlgb}
 
-This is a method used in summarization. Didn't find references.
+This is a quantization (summarization) method based on k-means. It's commonly used in data compression \cite{kekre2008speech}. One of the most famous implementations of this method is the LBG algorithm \cite{linde1980algorithm}. 
+
+It divides the training data in clusters of equal size and represents each group by it's centroid point. In the test phase, we calculate the euclidian distance between each sample and all the centroids and label the sample with the class of the closest cluster.
 
 \subsubsection{Gaussian Mixture Models (GMM)} \label{class:gmm}
 
