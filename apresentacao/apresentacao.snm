@@ -9,5 +9,7 @@
 \beamer@slide {fig:gmm1}{13}
 \beamer@slide {tab:confusion_gmm}{14}
 \beamer@slide {fig:svm1}{15}
+\beamer@slide {tab:confusion_svm}{16}
 \beamer@slide {fig:nn1}{17}
+\beamer@slide {tab:confusion_nn}{18}
 \beamer@slide {tab:acc}{19}

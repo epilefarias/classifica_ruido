@@ -185,7 +185,7 @@ Instituto Militar de Engenharia \\
   		\setlength\itemsep{1em}
   		\item Tarefas de Processamento de Sinais Acústicos
         \begin{itemize}
-        	\item Reconehcimento de Locutor
+        	\item Reconhecimento de Locutor
             \item Localização
             \item Reconhecimento de Fala
         \end{itemize}
@@ -428,7 +428,12 @@ Instituto Militar de Engenharia \\
 	\begin{minipage}{.45\textwidth}
 	
 		\begin{itemize}
-			\item texto aqui
+			\item Usado em:
+			\begin{itemize}
+				\item Classificação.
+			\end{itemize}
+			\item Cria hiperplanos para separar classes.
+			\item Função kernel quadrática.
 		\end{itemize}
 	
 	\end{minipage}
@@ -446,7 +451,12 @@ Instituto Militar de Engenharia \\
 
 	\frametitle{Support Vector Machines  (resultados)}
 	
-
+	\begin{table}[h]
+		\centering
+		\caption{Matriz de confusão do classificador SVM}
+		\label{tab:confusion_svm}
+		\includegraphics[width=\textwidth]{conf_svm.png}
+	\end{table}
 	
 \end{frame}
 
@@ -459,7 +469,9 @@ Instituto Militar de Engenharia \\
 	\begin{minipage}{.45\textwidth}
 	
 		\begin{itemize}
-			\item texto aqui
+			\item Inspirada nos cérebros animais.
+			\item Aprende através de treinamento, sem programação.
+			\item 200 neurons na camada escondida.
 		\end{itemize}
 	
 	\end{minipage}
@@ -481,7 +493,12 @@ Instituto Militar de Engenharia \\
 
 	\frametitle{Rede Neural (resultados)}
 	
-	
+	\begin{table}[h]
+		\centering
+		\caption{Matriz de confusão do classificador usando Rede Neural}
+		\label{tab:confusion_nn}
+		\includegraphics[width=\textwidth]{conf_nn.png}
+	\end{table}	
 	
 \end{frame}
 
@@ -538,7 +555,7 @@ White Noise & 99,9\% & 99,9\% & 100,0\% & 100,0\% \\
 		\end{itemize}
 		\item Pontos Negativos:
 		\begin{itemize}
-			\item Alta Complexidade Computacional.
+			\item Treinamento é computacionalmente intensivo.
 			\item Necessidade de grande base de dados.
 		\end{itemize}
 	\end{itemize}
